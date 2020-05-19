@@ -1,0 +1,103 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<CarouselView
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:forms="clr-namespace:FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms"
+    x:Class="Covi.Features.OnBoarding.Components.OnBoardingCarouselView"
+    x:Name="OnBoardingCarousel"
+    IsSwipeEnabled="False"
+    ItemsSource="{Binding Source={x:Reference OnBoardingCarousel}, Path=OnBoardingItems}">
+    <CarouselView.Resources>
+        <ResourceDictionary>
+            <Style
+               x:Key="TextCaptionMedium"
+               BasedOn="{StaticResource FontLight}"
+               TargetType="Label">
+                   <Setter
+                       Property="CharacterSpacing"
+                       Value="1.21"/>
+                   <Setter
+                       Property="TextColor"
+                       Value="{DynamicResource OnSecondaryColor}" />
+                   <Setter
+                       Property="FontSize"
+                       Value="{StaticResource TextSizeCaption}" />
+             </Style>
+            <Style
+                x:Key="TextHeadlineLightH2"
+                BasedOn="{StaticResource FontLight}"
+                TargetType="Label">
+                    <Setter
+                        Property="TextColor"
+                        Value="{DynamicResource OnSecondaryColor}" />
+                    <Setter
+                        Property="FontSize"
+                        Value="28" />
+            </Style>
+        </ResourceDictionary>
+    </CarouselView.Resources>
+    <CarouselView.ItemTemplate>
+        <DataTemplate>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <forms:SvgCachedImage
+                    Grid.Column="0"
+                    Style="{StaticResource IconImageStyle}"
+                    Source="{Binding IconCode}"
+                    HeightRequest="48"/>
+                <Label
+                     Grid.Row="1"
+                     Text="{Binding Title}" 
+                     Style="{StaticResource TextCaptionMedium}"
+                     HorizontalOptions="Center"
+                     VerticalOptions="Center" />
+                <Label
+                     Grid.Row="2"
+                     Text="{Binding SubTitle}"
+                     HorizontalOptions="Center"
+                     Style="{StaticResource TextHeadlineLightH2}"/>
+                <StackLayout
+                     BindableLayout.ItemsSource="{Binding Instructions}"
+                     Grid.Row="3"
+                     Margin="8,0">
+                    <BindableLayout.ItemTemplate>
+                        <DataTemplate>
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"/>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                </Grid.ColumnDefinitions>
+                                <BoxView
+                                    Grid.Row="0"
+                                    Grid.Column="0"
+                                    Margin="0,8"
+                                    BackgroundColor="{StaticResource AccentColor}"
+                                    WidthRequest="8"
+                                    HeightRequest="8"
+                                    CornerRadius="4"
+                                    VerticalOptions="Start"
+                                    HorizontalOptions="Start"/>
+                                <Label
+                                    Grid.Row="0"
+                                    Grid.Column="1"
+                                    VerticalOptions="Start"
+                                    HorizontalOptions="Start"
+                                    Style="{StaticResource TextBody}"
+                                    Text="{Binding InstructionText}"/>
+                            </Grid>
+                        </DataTemplate>
+                    </BindableLayout.ItemTemplate>
+                </StackLayout>
+            </Grid>
+        </DataTemplate>
+    </CarouselView.ItemTemplate>
+</CarouselView>
+

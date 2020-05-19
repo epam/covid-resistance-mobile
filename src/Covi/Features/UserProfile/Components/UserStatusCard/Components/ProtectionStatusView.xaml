@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:forms="clr-namespace:FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms"
+             xmlns:resources="clr-namespace:Covi.Resources;assembly=Covi"
+             mc:Ignorable="d"
+             x:Class="Covi.Features.UserProfile.Components.UserStatusCard.Components.ProtectionStatusView">
+  <ContentView.Content>
+      <Grid HorizontalOptions="End"
+            Margin="0,0,0,0">
+          <Grid.ColumnDefinitions>
+              <ColumnDefinition Width="Auto"/>
+              <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+          <forms:SvgCachedImage Grid.Column="0"
+                                Style="{StaticResource IconImageStyle}"
+                                Source="protecting.svg">
+          </forms:SvgCachedImage>
+          <Label Grid.Column="1"
+                 Text="{x:Static resources:Localization.Profile_Protecting_Text}"
+                 VerticalOptions="Center"
+                 Style="{StaticResource TextCardTitleStyle}"/>
+        </Grid>
+    </ContentView.Content>
+</ContentView>

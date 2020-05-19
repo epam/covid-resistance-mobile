@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+            xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+            x:Class="Covi.Features.Main.MainPage"
+            xmlns:userProfile="clr-namespace:Covi.Features.UserProfile"
+            xmlns:recommendations="clr-namespace:Covi.Features.Recommendations"
+            xmlns:medical="clr-namespace:Covi.Features.Medical"
+            xmlns:medicalLogin="clr-namespace:Covi.Features.MedicalLogin"
+            xmlns:resources="clr-namespace:Covi.Resources"
+            BarTextColor="{StaticResource OnSurfaceColor}"
+            BarBackgroundColor="{StaticResource SurfaceColor}"
+            UnselectedTabColor="{StaticResource OnTertiaryColor}"
+            SelectedTabColor="{StaticResource AccentColor}"
+            >
+    <TabbedPage.Children>
+        <userProfile:UserProfilePage
+            Title="{x:Static resources:Localization.Shell_Profile_Title_Text}"
+            IconImageSource="profile"
+            HeightRequest="24"
+            WidthRequest="24"
+            x:Name="uerProfilePage"/>
+        <recommendations:RecommendationsPage
+            Title="{x:Static resources:Localization.Shell_Recommendations_Title_Text}"
+            HeightRequest="24"
+            WidthRequest="24"
+            IconImageSource="health_advice"
+            x:Name="recommendationsPage"/>
+        <medical:MedicalPage
+            Title="{x:Static resources:Localization.Shell_Medical_Title_Text}"
+            IconImageSource="medical"
+            HeightRequest="24"
+            WidthRequest="24"
+            x:Name="medicalPage">
+        </medical:MedicalPage>
+    </TabbedPage.Children>
+</TabbedPage>

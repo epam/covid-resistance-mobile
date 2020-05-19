@@ -1,0 +1,144 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <ProduceReferenceAssembly>true</ProduceReferenceAssembly>
+    <Configurations>Debug;Release;</Configurations>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Features\CreateProfile\Components\**" />
+    <Compile Remove="Features\CreateProfile\Services\**" />
+    <EmbeddedResource Remove="Features\CreateProfile\Components\**" />
+    <EmbeddedResource Remove="Features\CreateProfile\Services\**" />
+    <None Remove="Features\CreateProfile\Components\**" />
+    <None Remove="Features\CreateProfile\Services\**" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="LiteDB" Version="5.0.7" />
+    <PackageReference Include="Microsoft.Extensions.Logging" Version="3.1.3" />
+    <PackageReference Include="Prism.DryIoc.Extensions" Version="7.2.0.1054" />
+    <PackageReference Include="Prism.Forms.Extended" Version="7.2.0.1054" />
+    <PackageReference Include="PropertyChanged.Fody" Version="3.2.8" />
+    <PackageReference Include="Xamarin.Forms" Version="4.6.0.726" />  
+    <PackageReference Include="Xamarin.Essentials" Version="1.5.3.1" />
+    <PackageReference Include="Xamarin.FFImageLoading.Svg.Forms" Version="2.4.11.982" />
+    <PackageReference Include="Xamarin.FFImageLoading.Forms" Version="2.4.11.982" />
+    <PackageReference Include="ReactiveUI.XamForms" Version="11.3.8" />
+    <PackageReference Include="FluentValidation" Version="8.6.2" />
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
+    <PackageReference Include="Nito.AsyncEx" Version="5.0.0" />
+    <PackageReference Include="StyleCop.Analyzers" Version="1.1.118" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Features\Account\!Exceptions\" />
+    <Folder Include="Features\Account\Models\" />
+    <Folder Include="Features\Recommendations\Components\" />
+    <Folder Include="Features\Recommendations\Services\" />
+    <Folder Include="Features\MedicalChangeStatus\Services\" />
+    <Folder Include="Services\Platform\" />
+    <Folder Include="Features\CreateProfile\Validation\" />
+    <Folder Include="Services\Notification\" />
+    <Folder Include="Features\BluetoothTracing\TracingInformation\Internal\" />
+    <Folder Include="Features\BluetoothTracing\DeviceProcessor\Internal\" />
+    <Folder Include="Features\BluetoothTracing\Internal\" />
+    <Folder Include="Services\Dispatcher\" />
+    <Folder Include="Features\PushNotifications\" />
+    <Folder Include="Features\PushNotifications\Services\" />
+    <Folder Include="Features\BluetoothTracing\DeviceManager\Internal\" />
+    <Folder Include="Services\ErrorHandlers\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Update="Features\Controls\BusyIndicatorView.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Features\MedicalCodeSharing\MedicalCodeSharingPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Features\MedicalCodeSharing\Components\ShareButton\ShareButtonView.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Features\MedicalCodeSharing\Components\SharedCode\SharedCodeView.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Features\MedicalCodeSharing\Components\Title\TitleSharingView.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Features\Main\MainPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Features\OnBoarding\Components\HorizontalSelectedItemIndicatorControl.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Features\OnBoarding\OnBoardingPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Features\Shell\ShellPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Features\UserLogIn\UserLogInPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Features\UserProfile\Components\BluetoothReminder\BluetoothReminderView.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Features\UserProfile\Components\ChangeStatus\ChangeStatusView.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Features\UserProfile\Components\EncryptionStatus\EncryptionStatusView.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Features\UserProfile\Components\UserStatusCard\Components\ProtectionStatusView.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>    
+    <EmbeddedResource Update="Resources\Localization.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Localization.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Styles\Colors.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Update="Features\MedicalCodeSharing\MedicalCodeSharingPage.xaml.cs">
+      <DependentUpon>MedicalCodeSharingPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Features\MedicalCodeSharing\Components\Title\TitleSharingView.xaml.cs">
+      <DependentUpon>TitleSharingView.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Features\MedicalChangeStatus\MedicalChangeStatusView.xaml.cs">
+      <DependentUpon>MedicalChangeStatusView.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Features\MedicalLogin\Components\LogIn\MedicalLogInView.xaml.cs">
+      <DependentUpon>MedicalLogInView.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Features\UserProfile\Components\BluetoothReminder\BluetoothReminderView.xaml.cs">
+      <DependentUpon>BluetoothReminderView.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Features\UserProfile\Components\EncryptionStatus\EncryptionStatusView.xaml.cs">
+      <DependentUpon>EncryptionStatusView.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Features\UserProfile\Components\HealthStatusAdvice\HealthStatusAdviceView.xaml.cs">
+      <DependentUpon>HealthStatusAdviceView.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Features\UserProfile\Components\UserStatusCard\Components\ProtectionStatusView.xaml.cs">
+      <DependentUpon>ProtectionStatusView.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Resources\Localization.Designer.cs">
+      <DependentUpon>Localization.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Covi.Client\Covi.Client.csproj" />
+    <ProjectReference Include="..\Covi.Configuration\Covi.Configuration.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <AdditionalFiles Include="..\stylecop.json" Link="stylecop.json" />
+  </ItemGroup>
+
+  <PropertyGroup>
+    <CodeAnalysisRuleSet>$(SolutionDir)\Covi.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+</Project>

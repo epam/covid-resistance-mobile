@@ -1,0 +1,667 @@
+{
+  "openapi": "3.0.6",
+  "info": {
+    "title": "PlatformEndpoints",
+    "version": "v1",
+    "description": "Available API's."
+  },
+  "paths": {
+    "/api/v1/user/register": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/correlationId"
+        }
+      ],
+      "post": {
+        "tags": [
+          "User Service"
+        ],
+        "summary": "Registers the user.",
+        "description": "Called on initial registration. Validate the uniqueness of the user token.",
+        "operationId": "registerUser",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RegisterRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Registration is successful.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TokenAndProfileResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/user/refresh": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/correlationId"
+        }
+      ],
+      "post": {
+        "tags": [
+          "User Service"
+        ],
+        "summary": "Refreshes the access token.",
+        "description": "Called when the access token has expired.",
+        "operationId": "refreshToken",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RefreshTokenRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "New token is provided.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TokenResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/user/login": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/correlationId"
+        }
+      ],
+      "post": {
+        "tags": [
+          "User Service"
+        ],
+        "summary": "Logins the user.",
+        "description": "Called when an existing user reinstalls the app.",
+        "operationId": "login",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/LoginRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Login is successful.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/LoginResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/user/profile": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/correlationId"
+        }
+      ],
+      "get": {
+        "tags": [
+          "User Service"
+        ],
+        "summary": "Gets the user profile.",
+        "description": "Called whenever the mobile needs the user state and profile metadata.",
+        "operationId": "getUserProfile",
+        "responses": {
+          "200": {
+            "description": "Returns the user state and profile metadata.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UserProfileResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/medical/register": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/correlationId"
+        }
+      ],
+      "post": {
+        "tags": [
+          "User Service"
+        ],
+        "summary": "Registers the user as a doctor.",
+        "description": "Called when a user wants to register as a doctor.",
+        "operationId": "registerMedical",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RegisterDoctorRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Registration is successful.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UserProfileResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/notification/setup": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/correlationId"
+        }
+      ],
+      "post": {
+        "tags": [
+          "User Service"
+        ],
+        "summary": "Setups push notifications.",
+        "description": "Called by the mobile to share the push notification token and mobile OS identification.",
+        "operationId": "setupNotifications",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NotificationInfo"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Push notification token is saved successfully."
+          }
+        }
+      }
+    },
+    "/api/v1/infection/status/init": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/correlationId"
+        }
+      ],
+      "post": {
+        "tags": [
+          "Infection Service"
+        ],
+        "summary": "Initiates a status change request.",
+        "description": "Called when a doctor initiates a status change request.",
+        "operationId": "initStatusChange",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ChangeRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful initiation of a status change request.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MedicalCode"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/infection/status/accept": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/correlationId"
+        }
+      ],
+      "post": {
+        "tags": [
+          "Infection Service"
+        ],
+        "summary": "Accepts the status change request.",
+        "description": "Called when the user accepts the status change request.",
+        "operationId": "acceptStatusChange",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AcceptRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Status change request is accepted.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UserProfileResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/info/recommendations": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/correlationId"
+        }
+      ],
+      "get": {
+        "tags": [
+          "Info Service"
+        ],
+        "summary": "Searches for recommendations.",
+        "description": "Retrieves recommendations according to the status.",
+        "operationId": "getRecommendations",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "statusId",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "example": 1
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Recommendations according to the status.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RecommendationsList"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "parameters": {
+      "correlationId": {
+        "in": "header",
+        "name": "X-Correlation-Id",
+        "schema": {
+          "type": "string"
+        }
+      }
+    },
+    "schemas": {
+      "AcceptRequest": {
+        "type": "object",
+        "properties": {
+          "meetings": {
+            "$ref": "#/components/schemas/MeetingsList"
+          },
+          "medicalCode": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "medicalCode"
+        ]
+      },
+      "RegisterRequest": {
+        "type": "object",
+        "properties": {
+          "username": {
+            "type": "string",
+            "example": "username"
+          },
+          "password": {
+            "type": "string",
+            "example": "password"
+          },
+          "userToken": {
+            "type": "string",
+            "example": "6pEACc2lSTCSt4x1FcWCNw"
+          }
+        },
+        "required": [
+          "username",
+          "password",
+          "userToken"
+        ]
+      },
+      "RegisterDoctorRequest": {
+        "type": "object",
+        "properties": {
+          "healthSecurityId": {
+            "type": "string",
+            "example": "UCS265DA"
+          }
+        },
+        "required": [
+          "healthSecurityId"
+        ]
+      },
+      "NotificationInfo": {
+        "type": "object",
+        "properties": {
+          "pushNotificationToken": {
+            "type": "string"
+          },
+          "pushNotificationTarget": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "pushNotificationToken",
+          "pushNotificationTarget"
+        ]
+      },
+      "LoginRequest": {
+        "type": "object",
+        "properties": {
+          "username": {
+            "type": "string",
+            "example": "Username"
+          },
+          "password": {
+            "type": "string",
+            "example": "Password"
+          }
+        },
+        "required": [
+          "username",
+          "password"
+        ]
+      },
+      "MeetingsList": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/Meeting"
+        }
+      },
+      "Meeting": {
+        "type": "object",
+        "properties": {
+          "userToken": {
+            "type": "string",
+            "example": "6pEACc2lSTCSt4x1FcWCNw"
+          },
+          "timestamp": {
+            "type": "string",
+            "format": "date-time"
+          }
+        },
+        "required": [
+          "userToken",
+          "timestamp"
+        ]
+      },
+      "ChangeRequest": {
+        "type": "object",
+        "properties": {
+          "statusId": {
+            "type": "integer",
+            "format": "int32",
+            "example": 3
+          },
+          "statusChangedOn": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "comment": {
+            "type": "string",
+            "example": "The patient was tested at XXX hospital and is positive."
+          }
+        },
+        "required": [
+          "statusId",
+          "statusChangedOn"
+        ]
+      },
+      "MedicalCode": {
+        "type": "object",
+        "properties": {
+          "medicalCode": {
+            "type": "string",
+            "description": "One-time-use medical code",
+            "example": "DHB6FXS1"
+          },
+          "expiresAt": {
+            "type": "string",
+            "format": "date-time"
+          }
+        }
+      },
+      "RecommendationsList": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "string"
+          },
+          "data": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Recommendation"
+            }
+          }
+        }
+      },
+      "Recommendation": {
+        "type": "object",
+        "properties": {
+          "title": {
+            "type": "string",
+            "example": "UK Government"
+          },
+          "subTitle": {
+            "type": "string",
+            "example": "Coronavirus (COVID-19): What you need to do"
+          },
+          "description": {
+            "type": "string",
+            "example": "Stay at home"
+          }
+        }
+      },
+      "Statuses": {
+        "type": "object",
+        "properties": {
+          "values": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Status"
+            }
+          },
+          "default": {
+            "type": "integer",
+            "format": "int32",
+            "example": 1
+          },
+          "onExposure": {
+            "type": "integer",
+            "format": "int32",
+            "example": 2
+          }
+        }
+      },
+      "Status": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32",
+            "example": 2
+          },
+          "name": {
+            "type": "string",
+            "example": "At Risk"
+          },
+          "severity": {
+            "type": "integer",
+            "format": "int32",
+            "example": 1,
+            "enum": [
+              0,
+              1,
+              2
+            ]
+          },
+          "description": {
+            "type": "string",
+            "example": "Your Health Status has changed. Please follow urgently your behaviour recommendations."
+          },
+          "url": {
+            "type": "string"
+          },
+          "requiresContactDiscovery": {
+            "type": "boolean",
+            "example": false
+          }
+        }
+      },
+      "UserProfileResponse": {
+        "type": "object",
+        "properties": {
+          "userProfile": {
+            "$ref": "#/components/schemas/UserState"
+          },
+          "metadata": {
+            "$ref": "#/components/schemas/Metadata"
+          }
+        }
+      },
+      "Metadata": {
+        "type": "object",
+        "properties": {
+          "statuses": {
+            "$ref": "#/components/schemas/Statuses"
+          }
+        }
+      },
+      "UserState": {
+        "type": "object",
+        "properties": {
+          "statusId": {
+            "type": "integer",
+            "format": "int32",
+            "example": 1
+          },
+          "statusChangedOn": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "username": {
+            "type": "string"
+          },
+          "roles": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "Token": {
+        "type": "object",
+        "properties": {
+          "accessToken": {
+            "type": "string"
+          },
+          "refreshToken": {
+            "type": "string"
+          },
+          "expiresIn": {
+            "type": "integer",
+            "format": "int32"
+          }
+        }
+      },
+      "TokenResponse": {
+        "type": "object",
+        "properties": {
+          "token": {
+            "$ref": "#/components/schemas/Token"
+          }
+        }
+      },
+      "RefreshTokenRequest": {
+        "type": "object",
+        "properties": {
+          "refreshToken": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "refreshToken"
+        ]
+      },
+      "TokenAndProfileResponse": {
+        "type": "object",
+        "properties": {
+          "token": {
+            "$ref": "#/components/schemas/Token"
+          },
+          "userProfile": {
+            "$ref": "#/components/schemas/UserState"
+          },
+          "metadata": {
+            "$ref": "#/components/schemas/Metadata"
+          }
+        }
+      },
+      "LoginResponse": {
+        "type": "object",
+        "properties": {
+          "userToken": {
+            "type": "string"
+          },
+          "token": {
+            "$ref": "#/components/schemas/Token"
+          },
+          "userProfile": {
+            "$ref": "#/components/schemas/UserState"
+          },
+          "metadata": {
+            "$ref": "#/components/schemas/Metadata"
+          }
+        }
+      }
+    }
+  }
+}

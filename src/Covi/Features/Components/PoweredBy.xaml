@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:resources="clr-namespace:Covi.Resources"
+    x:Class="Covi.Features.Components.PoweredBy">
+    <ContentView.Content>
+        <Label>
+            <Label.FormattedText>
+                <FormattedString>
+                    <Span
+                        Text="{Static resources:Localization.Global_PoweredBy_Text}"
+                        Style="{StaticResource FontRegular}"
+                        TextColor="#354058"
+                        FontSize="13"/>
+                    <Span
+                        Text="{Static resources:Localization.Global_EPAM_Text}"
+                        Style="{StaticResource FontSemibold}"
+                        FontSize="13"/>
+                </FormattedString>
+            </Label.FormattedText>
+        </Label>
+    </ContentView.Content>
+</ContentView>

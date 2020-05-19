@@ -1,0 +1,98 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView
+    x:Name="Root"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:effects="clr-namespace:Covi.Effects"
+    xmlns:ffimageloadingsvg="clr-namespace:FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms"
+    x:Class="Covi.Features.Components.CoviEntry">
+    <ContentView.Content>
+        
+        <StackLayout
+            Orientation="Vertical"
+            HorizontalOptions="Fill"
+            VerticalOptions="Start"
+            >
+
+        <StackLayout
+            Orientation="Vertical"
+            HorizontalOptions="Fill"
+            VerticalOptions="Start"
+            BackgroundColor="{StaticResource EntryBackgroundColor}"
+            >
+
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+
+                <Entry
+                    Grid.Column="0"
+                    Grid.Row="0"
+                    BindingContext="{x:Reference Root}"
+                    IsPassword="{Binding HidePassword}"
+                    ReturnType="{Binding ReturnType}"
+                    ReturnCommand="{Binding ReturnCommand}"
+                    ReturnCommandParameter="{Binding ReturnCommandParameters}"
+                    Text="{Binding Text}"
+                    Placeholder="{Binding Placeholder}"
+                    PlaceholderColor="{StaticResource EntryOnBackgroundColor}"
+                    TextColor="{StaticResource EntryOnBackgroundColor}"
+                    Margin="16, 10, 16, 10"
+                    HorizontalOptions="Fill"
+                    VerticalOptions="Start"
+                    effects:BorderlessEntryEffect.UseEntryEffect="True"/>
+
+                <ffimageloadingsvg:SvgCachedImage
+                    x:Name="PasswordEye"
+                    Style="{StaticResource IconImageStyle}"
+                    BindingContext="{x:Reference Root}"
+                    IsVisible="{Binding ShowPasswordEye}"
+                    Grid.Column="1"
+                    Grid.Row="0"
+                    Source="show_password.svg"
+                    Margin="16, 0, 16, 0"
+                    HorizontalOptions="End">
+                    <ffimageloadingsvg:SvgCachedImage.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
+                    </ffimageloadingsvg:SvgCachedImage.GestureRecognizers>
+                </ffimageloadingsvg:SvgCachedImage>
+
+            </Grid>
+
+            <BoxView
+                x:Name="EntryUnderline"
+                HorizontalOptions="Fill"
+                VerticalOptions="End"
+                Margin="0,-6,0,0"
+                HeightRequest="2"
+                BackgroundColor="{StaticResource EntryUnderlineColor}"
+                />
+
+        </StackLayout>
+
+        <StackLayout
+            x:Name="ErrorTextControl"
+            IsVisible="False"
+            Orientation="Horizontal">
+
+            <ffimageloadingsvg:SvgCachedImage
+                Style="{StaticResource IconImageStyle}"
+                Source="error.svg"/>
+            <Label
+                x:Name="ErrorTextLabel"
+                BindingContext="{x:Reference Root}"
+                Text="{Binding ErrorText}"
+                IsVisible="False"
+                Style="{StaticResource TextValidationError}"/>
+
+        </StackLayout>
+        </StackLayout>
+
+    </ContentView.Content>
+
+</ContentView>

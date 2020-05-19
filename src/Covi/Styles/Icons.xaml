@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<?xaml-comp compile="true" ?>
+<ResourceDictionary xmlns="http://xamarin.com/schemas/2014/forms"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                    xmlns:local="clr-namespace:Covi.Styles;assembly=Covi">
+
+    <OnPlatform x:Key="FontAwesome"
+                x:TypeArguments="x:String"
+                Android="fa-solid-900.ttf#Font Awesome 5 Free"
+                iOS="Font Awesome 5 Free" />
+
+    <Color x:Key="ColorTabIcon">Gray</Color>
+    <x:Double x:Key="SizeTabIcon">24</x:Double>
+
+    <OnPlatform x:Key="StringBackIcon"
+                x:TypeArguments="x:String"
+                Android="{x:Static local:IconFont.ArrowLeft}"
+                iOS="{x:Static local:IconFont.ChevronLeft}" />
+
+    <FontImageSource x:Key="IconTabProfile"
+                     FontFamily="{StaticResource FontAwesome}"
+                     Glyph="{x:Static local:IconFont.User}"
+                     Size="{StaticResource SizeTabIcon}"/>
+
+    <FontImageSource x:Key="IconTabMaps"
+                     FontFamily="{StaticResource FontAwesome}"
+                     Glyph="{x:Static local:IconFont.Map}"
+                     Size="{StaticResource SizeTabIcon}"/>
+
+    <FontImageSource x:Key="IconTabMedical"
+                     FontFamily="{StaticResource FontAwesome}"
+                     Glyph="{x:Static local:IconFont.Plus}"
+                     Size="{StaticResource SizeTabIcon}"/>
+
+    <FontImageSource x:Key="IconTabInformation"
+                     FontFamily="{StaticResource FontAwesome}"
+                     Glyph="{x:Static local:IconFont.Info}"
+                     Size="{StaticResource SizeTabIcon}"/>
+
+    <FontImageSource x:Key="IconTabCorporate"
+                     FontFamily="{StaticResource FontAwesome}"
+                     Glyph="{x:Static local:IconFont.ChartBar}"
+                     Size="{StaticResource SizeTabIcon}" />
+    
+    <FontImageSource x:Key="IconTabRecommendations"
+                     FontFamily="{StaticResource FontAwesome}"
+                     Glyph="{x:Static local:IconFont.ThumbsUp}"
+                     Size="{StaticResource SizeTabIcon}"/>
+
+</ResourceDictionary>

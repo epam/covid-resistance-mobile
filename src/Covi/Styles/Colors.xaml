@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<?xaml-comp compile="true" ?>
+<ResourceDictionary xmlns="http://xamarin.com/schemas/2014/forms"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+
+    <Color x:Key="BackgroundColor">#f5f5f5</Color>
+    <Color x:Key="OnBackgroundColor">#2E384D</Color>
+
+    <Color x:Key="BackgroundVariant1Color">#FFFFFF</Color>
+    <Color x:Key="OnBackgroundVariant1Color">#2E384D</Color>
+
+    <Color x:Key="PrimaryColor">#516EEA</Color>
+    <Color x:Key="OnPrimaryColor">#FFFFFF</Color>
+
+    <Color x:Key="SecondaryColor">#FFFFFF</Color>
+    <Color x:Key="OnSecondaryColor">#2E384D</Color>
+
+    <Color x:Key="TertiaryColor">#FFFFFF</Color>
+    <Color x:Key="OnTertiaryColor">#A6ADC3</Color>
+
+    <Color x:Key="AccentColor">#516EEA</Color>
+
+    <Color x:Key="SurfaceColor">#FFFFFF</Color>
+    <Color x:Key="OnSurfaceColor">#2e384d</Color>
+
+    <Color x:Key="ErrorColor">#ff0000</Color>
+
+    <Color x:Key="BorderColor">#142e5bff</Color>
+
+    <!-- Start Delete me -->
+    <Color x:Key="EntryBackground">#f5f5f5</Color>
+    <!-- End Delete me -->
+
+    <!-- Entry colors -->
+    <Color x:Key="EntryBackgroundColor">#f5f5f5</Color>
+    <Color x:Key="EntryOnBackgroundColor">#2E384D</Color>
+    <Color x:Key="EntryUnderlineCorrectColor">#516EEA</Color>
+    <Color x:Key="EntryUnderlineErrorColor">#ff0000</Color>
+    <Color x:Key="EntryUnderlineColor">#c3c3c3</Color>
+
+    <Color x:Key="SeparatorColor">#EEEEEE</Color>
+
+    <Color x:Key="RadioButtonColor">#EEEEEE</Color>
+    <Color x:Key="RadioButtonActiveColor">#43B02A</Color>
+
+    <Color x:Key="HealthyStatusColor">#00bb45</Color>
+    <Color x:Key="AtRiskStatusColor">#f3b700</Color>
+    <Color x:Key="InfectedStatusColor">#ff0000</Color>
+    <Color x:Key="NotRecognizedStatusColor">#f5f5f5</Color>
+</ResourceDictionary>

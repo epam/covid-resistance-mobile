@@ -1,0 +1,72 @@
+{
+	"$schema": "https://mobilebuildtools.com/schemas/v2/buildtools.schema.json",
+	"appConfig": {
+			"strategy": "TransformOnly",
+			"disable": false
+		},
+		"projectSecrets": {
+			"Covi.Configuration": {
+				"delimiter": ";",
+				"disable": false,
+				"className": "Secrets",
+				"namespace": "Helpers",
+				"properties": [
+					{
+						"name": "EndpointUrl",
+						"type": "string",
+						"isArray": false
+					},
+
+					{
+						"name": "SecretsProvider_EncryptionKeyFieldName",
+						"type": "string",
+						"isArray": false
+					},
+					{
+						"name": "SecretsProvider_DeviceIdentifierFieldName",
+						"type": "string",
+						"isArray": false
+					},
+					{
+						"name": "SecretsProvider_InitializedFlagFieldName",
+						"type": "string",
+						"isArray": false
+					},
+					{
+						"name": "SecretsProvider_IsFirstRunFieldName",
+						"type": "string",
+						"isArray": false
+					},
+
+					
+					{
+						"name": "AppCenter_iOS_Secret",
+						"type": "string",
+						"isArray": false
+					},
+					{
+						"name": "AppCenter_Android_Secret",
+						"type": "string",
+						"isArray": false
+					},
+
+
+					{
+						"name": "PushNotifications_NotificationChannelName",
+						"type": "string",
+						"isArray": false
+					},
+					{
+						"name": "PushNotifications_NotificationHubName",
+						"type": "string",
+						"isArray": false
+					},
+					{
+						"name": "PushNotifications_ListenConnectionString",
+						"type": "string",
+						"isArray": false
+					}
+				]
+    	},
+	}
+}

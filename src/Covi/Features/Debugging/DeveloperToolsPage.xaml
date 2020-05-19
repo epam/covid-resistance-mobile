@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="Covi.Features.Debugging.DeveloperToolsPage"
+    Title="Debug"
+    IconImageSource="{StaticResource IconTabInformation}">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout>
+                <Label
+                Text="Developer Tools" />
+                <Button
+                Text="Restart bluetooth:"
+                Command="{Binding RestartBluetoothCommand}" />
+                <Label Text="Device Id:"/>
+                <Entry Text="{Binding DeviceId}" />
+                <Label Text="Add contact device id:"/>
+                <Entry Text="{Binding ContactDeviceId}"/>
+                <Button Text="Add contact" Command="{Binding AddContactDeviceCommand}"/>
+                <Label Text="Contacted Devices:"/>
+                <Button Text="Refresh" Command="{Binding RefreshContactedDevicesCommand}"/>
+                <Button Text="Clean database" Command="{Binding CleanContactedDevicesStorageCommand}"/>
+                <ListView ItemsSource="{Binding ContactedDevices}" MinimumHeightRequest="200">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                </Grid.RowDefinitions>
+                                <Label Grid.Row="0" Text="{Binding ContactToken}"/>
+                                <Label Grid.Row="1" Text="{Binding ContactTimestamp}"/>
+                            </Grid>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>
+

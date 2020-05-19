@@ -1,0 +1,194 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage
+    x:Name="Root"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:resources="clr-namespace:Covi.Resources"
+    xmlns:basicView="clr-namespace:Covi.Features.Components"
+    xmlns:effects="clr-namespace:Covi.Effects" 
+    xmlns:controls="clr-namespace:Covi.Features.Controls;assembly=Covi"
+    x:Class="Covi.Features.CreateProfile.CreateProfilePage"
+    Style="{StaticResource RootStandalonePageStyle}">
+    <ContentPage.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <ContentView
+                x:Name="Header"
+                Style="{StaticResource PageHeaderVariant2Style}">
+                <Label
+                    Text="{Static resources:Localization.CreateProfile_PageName_Text}"
+                    Style="{StaticResource TextPageTitleVariant2Style}"/>
+            </ContentView>
+
+            <ScrollView
+                Grid.Row="1"
+                HorizontalOptions="FillAndExpand"
+                VerticalOptions="FillAndExpand"
+                Style="{StaticResource ContentContainerStyle}">
+
+                <StackLayout
+                Orientation="Vertical"
+                HorizontalOptions="FillAndExpand"
+                VerticalOptions="FillAndExpand"
+                >
+                    <Label
+                    Text="{Static resources:Localization.CreateProfile_Title_Text}"
+                    Style="{StaticResource TextTitle16}"
+                    Margin="0, 0, 0, 16"
+                    />
+
+                    <StackLayout
+                    Orientation="Vertical"
+                    Margin="8, 0"
+                    HorizontalOptions="FillAndExpand"
+                    VerticalOptions="FillAndExpand">
+
+                        <basicView:CoviEntry
+                        VerticalOptions="Start"
+                        HorizontalOptions="FillAndExpand"
+                        ReturnType="Next"
+                        Text="{Binding UsernameValue, Mode=TwoWay}"
+                        HasAnError="{Binding UsernameHasAnError}"
+                        ErrorText="{Binding UsernameErrorText}"
+                        Placeholder="{Static resources:Localization.CreateProfile_Username_Entry_Placeholder_Text}"
+                        />
+
+                        <Grid Margin="8,24,8,24">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+
+                            <Label
+                                Grid.Row="0"
+                                Grid.ColumnSpan="2"
+                                Text="{Static resources:Localization.CreateProfile_PasswordRequirements_Text}"
+                                Style="{StaticResource TextBody}"/>
+
+                            <basicView:RoundCheckBox
+                            x:Name="FirstBox"
+                            ValidStatus="{Binding MinLengthRuleIsSatisfied}"
+                            Grid.Column="0"
+                            Grid.Row="1"/>
+
+                            <basicView:RoundCheckBox
+                            x:Name="SecondBox"
+                            ValidStatus="{Binding OneUpperCaseRuleIsSatisafied}"
+                            Grid.Column="0"
+                            Grid.Row="2"/>
+
+                            <basicView:RoundCheckBox
+                            x:Name="ThirdBox"
+                            ValidStatus="{Binding OneLowerCaseRuleIsSatisafied}"
+                            Grid.Column="0"
+                            Grid.Row="3"/>
+
+                            <basicView:RoundCheckBox
+                            x:Name="FourthBox"
+                            ValidStatus="{Binding OneSpecialSymbolRuleIsSatisafied}"
+                            Grid.Column="0"
+                            Grid.Row="4"/>
+
+                            <Label
+                            Grid.Column="1"
+                            Grid.Row="1"
+                            Style="{StaticResource TextListItemsLight}"
+                            Text="{Static resources:Localization.CreateProfile_Requirement_1_Text}"/>
+
+                            <Label
+                            Grid.Column="1"
+                            Grid.Row="2"
+                            Style="{StaticResource TextListItemsLight}"
+                            Text="{Static resources:Localization.CreateProfile_Requirement_2_Text}"/>
+
+                            <Label
+                            Grid.Column="1"
+                            Grid.Row="3"
+                            Style="{StaticResource TextListItemsLight}"
+                            Text="{Static resources:Localization.CreateProfile_Requirement_3_Text}"/>
+
+                            <Label
+                            Grid.Column="1"
+                            Grid.Row="4"
+                            Style="{StaticResource TextListItemsLight}"
+                            Text="{Static resources:Localization.CreateProfile_Requirement_4_Text}"/>
+
+                        </Grid>
+
+                        <basicView:CoviEntry
+                        VerticalOptions="Start"
+                        HorizontalOptions="FillAndExpand"
+                        HidePassword="True"
+                        ShowPasswordEye="True"
+                        ReturnType="Next"
+                        HasAnError="{Binding PasswordHasAnError}"
+                        Text="{Binding PasswordValue, Mode=TwoWay}"
+                        Placeholder="{Static resources:Localization.CreateProfile_Password_Text}"
+                    />
+
+                        <basicView:CoviEntry
+                        VerticalOptions="Start"
+                        HorizontalOptions="FillAndExpand"
+                        HidePassword="True"
+                        ShowPasswordEye="True"
+                        ReturnType="Send"
+                        ReturnCommand="{Binding CreateAccountCommand}"
+                        HasAnError="{Binding ConfirmPasswordHasAnError}"
+                        ErrorText="{Binding ErrorText}"
+                        Text="{Binding PasswordConfirmValue, Mode=TwoWay}"
+                        Placeholder="{Static resources:Localization.CreateProfile_Confirm_Password_Text}"
+                        Margin="0, 24, 0, 0"
+                        />
+
+                        <Button
+                        Text="{x:Static resources:Localization.CreateProfile_Next_Button_Text}"
+                        Style="{StaticResource HeroButtonStyle}"
+                        Margin="0,32,0,0"
+                        Command="{Binding CreateAccountCommand}"/>
+
+
+                    </StackLayout>
+
+                    <StackLayout
+                    Orientation="Horizontal"
+                    Margin="8,0,8,0"
+                    HorizontalOptions="Center"
+                    VerticalOptions="End">
+
+                        <Label
+                        Text="{x:Static resources:Localization.SignUp_AlreadyHaveAnAccount_Text}"
+                        Style="{StaticResource SecondaryTextStyle}"
+                        VerticalTextAlignment="Center"
+                        FontSize="15"/>
+
+                        <Button
+                        Text="{x:Static resources:Localization.SignUp_LoginBtn_Text}"
+                        Style="{StaticResource FlatButtonStyle}"
+                        Command="{Binding LogInCommand}"/>
+
+                    </StackLayout>
+
+                    <basicView:PoweredBy
+                        HorizontalOptions="Center"/>
+
+                </StackLayout>
+
+            </ScrollView>
+
+            <controls:BusyIndicatorView Grid.Row="1"
+                                        FadeBackground="True"
+                                        IsActive="{Binding IsBusy}"/>
+        </Grid>
+    </ContentPage.Content>
+
+</ContentPage>

@@ -1,0 +1,121 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:resources="clr-namespace:Covi.Resources"
+             xmlns:controls="clr-namespace:Covi.Features.Controls;assembly=Covi"
+             xmlns:components="clr-namespace:Covi.Features.MedicalChangeStatus.Components;assembly=Covi"
+             xmlns:forms="clr-namespace:FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms"
+             x:Class="Covi.Features.MedicalChangeStatus.MedicalChangeStatusView"
+             BackgroundColor="{StaticResource EntryBackground}">
+    <Grid HorizontalOptions="FillAndExpand"
+          RowSpacing="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+        <ContentView Grid.Row="0"
+                     Style="{StaticResource PageHeaderStyle}">
+            <Label Text="{Static resources:Localization.Medical_Title_Text}"
+                   Style="{StaticResource TextPageTitleStyle}"/>
+        </ContentView>
+        <BoxView Grid.Row="1"
+                 Style="{StaticResource SeparatorStyle}"/>
+        <ScrollView
+            Grid.Row="2"
+            HorizontalOptions="FillAndExpand"
+            VerticalOptions="FillAndExpand">
+            <StackLayout
+                Spacing="0"
+                Margin="0,8,0,0"
+                BackgroundColor="{StaticResource BackgroundColor}"
+                HorizontalOptions="FillAndExpand"
+                VerticalOptions="FillAndExpand">
+                <StackLayout
+                Margin="30,10,30,0"
+                HeightRequest="60"
+                VerticalOptions="Center">
+                <Label
+                    Style="{StaticResource TextTitle16}"
+                    Text="{Static resources:Localization.Medical_FirstStep_Title}"/>
+                <Label
+                    Style="{StaticResource TextTitle16}"
+                    Text="{Static resources:Localization.Medical_FirstStep_Description}"/>
+            </StackLayout>
+                <BoxView Style="{StaticResource SeparatorStyle}"
+                         VerticalOptions="End"/>
+                <components:RadioButtonListView
+                OptionsList="{Binding StatusesList}"/>
+                <BoxView
+                Color="{StaticResource EntryBackground}"
+                HeightRequest="8"
+                HorizontalOptions="FillAndExpand"/>
+                <StackLayout
+                 Margin="30,10,30,0"
+                HeightRequest="90"
+                VerticalOptions="Center">
+                <Label
+                    Style="{StaticResource TextTitle16}"
+                    Text="{Static resources:Localization.Medical_SecondStep_Title}"/>
+                <Label
+                    Style="{StaticResource TextTitle16}"
+                    Text="{Static resources:Localization.Medical_SecondStep_Description}"/>
+            </StackLayout>
+                <BoxView Style="{StaticResource SeparatorStyle}"
+                         VerticalOptions="End"/>
+                <StackLayout
+                Margin="30,0"
+                HeightRequest="60"
+                Orientation="Horizontal"
+                HorizontalOptions="FillAndExpand">
+                <Label
+                    HorizontalOptions="Start"
+                    VerticalOptions="Center"
+                    Text="{Binding StatusChangeDateDisplayValue}"/>
+                <components:DatePickerView
+                    SelectedDate="{Binding StatusChangeDate}"
+                    VerticalOptions="Center"
+                    HorizontalOptions="EndAndExpand"/>
+            </StackLayout>
+                <BoxView
+                Color="{StaticResource EntryBackground}"
+                HeightRequest="8"
+                HorizontalOptions="FillAndExpand"/>
+                <StackLayout
+                Margin="30,20"
+                VerticalOptions="Center">
+                <StackLayout
+                    HorizontalOptions="FillAndExpand"
+                    Orientation="Horizontal"
+                    IsVisible="{Binding HasError}">
+                    <forms:SvgCachedImage
+                        Style="{StaticResource IconImageStyle}"
+                        Source="error.svg"/>
+                    <Label
+                        Text="{Binding ErrorMessage}"
+                        Style="{StaticResource TextValidationError}"/>
+                </StackLayout>
+                <Label
+                    Style="{StaticResource TextTitle16}"
+                    Text="{Static resources:Localization.Medical_ThirdStep_Title}"/>
+                <Label
+                    Style="{StaticResource TextTitle16}"
+                    Text="{Static resources:Localization.Medical_ThirdStep_Description}"/>
+                <Button
+                    Margin="10,10"
+                    Text="{x:Static resources:Localization.Medical_CreateCodeBtn_Text}"
+                    Style="{StaticResource ButtonStyle}"
+                    Command="{Binding InitStatusCommand}"/>
+            </StackLayout>
+                <BoxView
+                Color="{StaticResource EntryBackground}"
+                HeightRequest="8"
+                HorizontalOptions="FillAndExpand"/>
+            </StackLayout>
+        </ScrollView>
+        <controls:BusyIndicatorView
+            Grid.Row="2"
+            FadeBackground="True"
+            IsActive="{Binding IsBusy}"/>
+    </Grid>
+</ContentView>

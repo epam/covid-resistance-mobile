@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:resources="clr-namespace:Covi.Resources"
+    x:Class="Covi.Features.MedicalChangeStatus.Components.DatePickerView">
+    <ContentView.Content>
+        <StackLayout>
+            <Button
+              x:Name="DateBtn"
+              Clicked="DateBtnClicked"
+              Text="{x:Static resources:Localization.Medical_EditBtn_Text}"
+              Style="{StaticResource FlatButtonStyleBold}"/>
+            <DatePicker
+                x:Name="DatePicker"
+                DateSelected="DatePickerDateSelected"
+                IsVisible="False"/>
+        </StackLayout>
+    </ContentView.Content>
+</ContentView>

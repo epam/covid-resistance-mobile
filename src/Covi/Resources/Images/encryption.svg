@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="16px" height="21px" viewBox="0 0 16 21" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 59.1 (86144) - https://sketch.com -->
+    <title>Encription@2x</title>
+    <desc>Created with Sketch.</desc>
+    <g id="V2" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="V2Profile01-Copy" transform="translate(-26.000000, -587.000000)">
+            <g id="Encription" transform="translate(22.000000, 586.000000)">
+                <path d="M12,13 C11.4485,13 11,13.4485 11,14 C11,14.368 11.2025,14.6875 11.5,14.861 L11.5,17.5 C11.5,17.776 11.724,18 12,18 C12.276,18 12.5,17.776 12.5,17.5 L12.5,14.861 C12.7975,14.6875 13,14.368 13,14 C13,13.4485 12.5515,13 12,13" id="Fill-37" fill="#4A6CF2"></path>
+                <rect id="Rectangle" x="0" y="0" width="24" height="24"></rect>
+                <path d="M19.1111111,21.125 L4.88888889,21.125 L4.88888889,9.75 L6.66666667,9.75 L17.3333333,9.75 L19.1111111,9.75 L19.1111111,21.125 Z M7.55555556,6.25 C7.55555556,3.837625 9.54933333,1.875 12,1.875 C14.4506667,1.875 16.4444444,3.837625 16.4444444,6.25 L16.4444444,8.875 L7.55555556,8.875 L7.55555556,6.25 Z M17.3333333,8.875 L17.3333333,6.25 C17.3333333,3.3550625 14.9408889,1 12,1 C9.05911111,1 6.66666667,3.3550625 6.66666667,6.25 L6.66666667,8.875 L4,8.875 L4,22 L20,22 L20,8.875 L17.3333333,8.875 Z" id="Fill-39" fill="#4A6CF2"></path>
+            </g>
+        </g>
+    </g>
+</svg>

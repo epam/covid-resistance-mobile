@@ -1,0 +1,672 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Global_PoweredBy_Text" xml:space="preserve">
+    <value>Powered by </value>
+  </data>
+  <data name="Global_EPAM_Text" xml:space="preserve">
+    <value>EPAM Systems</value>
+  </data>
+  <data name="Splash_Crown_Text" xml:space="preserve">
+    <value>COVID</value>
+  </data>
+  <data name="Splash_Resistance_Text" xml:space="preserve">
+    <value>Resistance</value>
+  </data>
+  <data name="CreateProfile_PageName_Text" xml:space="preserve">
+    <value>Create profile</value>
+  </data>
+  <data name="CreateProfile_Title_Text" xml:space="preserve">
+    <value>Create a free anonymous profile</value>
+  </data>
+  <data name="CreateProfile_Username_Entry_Placeholder_Text" xml:space="preserve">
+    <value>Username</value>
+  </data>
+  <data name="CreateProfile_PasswordRequirements_Text" xml:space="preserve">
+    <value>Password requirements</value>
+  </data>
+  <data name="CreateProfile_Requirement_1_Text" xml:space="preserve">
+    <value>At least 8 characters</value>
+  </data>
+  <data name="CreateProfile_Requirement_2_Text" xml:space="preserve">
+    <value>Contain one upper case letter</value>
+  </data>
+  <data name="CreateProfile_Requirement_3_Text" xml:space="preserve">
+    <value>Contain one lower case letter</value>
+  </data>
+  <data name="CreateProfile_Requirement_4_Text" xml:space="preserve">
+    <value>Contain one special symbol</value>
+  </data>
+  <data name="CreateProfile_Requirement_Filled_Username_Text" xml:space="preserve">
+    <value>Username should not be empty.</value>
+  </data>
+  <data name="CreateProfile_Requirement_Same_Passwords_Text" xml:space="preserve">
+    <value>Password and confirmation password should be the same.</value>
+  </data>
+  <data name="CreateProfile_Password_Text" xml:space="preserve">
+    <value>Password</value>
+  </data>
+  <data name="CreateProfile_Confirm_Password_Text" xml:space="preserve">
+    <value>Confirm password</value>
+  </data>
+  <data name="CreateProfile_Next_Button_Text" xml:space="preserve">
+    <value>NEXT</value>
+  </data>
+  <data name="CreateProfile_AlreadyHaveAnAccount_Text" xml:space="preserve">
+    <value>Already have an account?</value>
+  </data>
+  <data name="CreateProfile_LoginBtn_Text" xml:space="preserve">
+    <value>Log in</value>
+  </data>
+  <data name="SignUp_AnonymousOption_Text" xml:space="preserve">
+    <value>I'm an anonymous user</value>
+  </data>
+  <data name="SignUp_Professional_Text" xml:space="preserve">
+    <value>I'm a health professional</value>
+  </data>
+  <data name="SignUp_Title_Text" xml:space="preserve">
+    <value>Sing Up</value>
+  </data>
+  <data name="SignUp_Anon_Description_Text" xml:space="preserve">
+    <value>Create a free anonymous profile</value>
+  </data>
+  <data name="SignUp_Prof_Description_Text" xml:space="preserve">
+    <value>Create a free account for physicians</value>
+  </data>
+  <data name="SignUp_Pseudonym_Text" xml:space="preserve">
+    <value>PSEUDONYM</value>
+  </data>
+  <data name="SignUp_SecretName_Text" xml:space="preserve">
+    <value>Choose a secret nickname</value>
+  </data>
+  <data name="SignUp_Name_Text" xml:space="preserve">
+    <value>NAME</value>
+  </data>
+  <data name="SignUp_IdNumber_Text" xml:space="preserve">
+    <value>FMH/EAN identification number</value>
+  </data>
+  <data name="SignUp_TypeHerePlaceHolder_Text" xml:space="preserve">
+    <value>Type here...</value>
+  </data>
+  <data name="SignUp_CreateAccountBtn_Text" xml:space="preserve">
+    <value>CREATE ACCOUNT</value>
+  </data>
+  <data name="SignUp_AlreadyHaveAnAccount_Text" xml:space="preserve">
+    <value>Already have an account?</value>
+  </data>
+  <data name="SignUp_LoginBtn_Text" xml:space="preserve">
+    <value>Log in</value>
+  </data>
+  <data name="SignUpMnemonic_MnemonicPhraseDescription_Text" xml:space="preserve">
+    <value>This is your mnemonic phrase. Write it down in the correct order on a piece of paper. Do not take screenshot. Use this mnemonic phrase to login.</value>
+  </data>
+  <data name="SignUpMnemonic_NextPage_Button_Text" xml:space="preserve">
+    <value>COPIED</value>
+  </data>
+  <data name="SignUpMnemonic_Notification_Text" xml:space="preserve">
+    <value>Please make sure you copied your phrase. You can't access your account without it.</value>
+  </data>
+  <data name="SignUpMnemonic_NotificationDismiss_Text" xml:space="preserve">
+    <value>Dismiss</value>
+  </data>
+  <data name="SignUpMnemonic_AlreadyHaveAcc_Text" xml:space="preserve">
+    <value>Already have an account?</value>
+  </data>
+  <data name="SignUpMnemonic_LogIn_Button_Text" xml:space="preserve">
+    <value>Log in</value>
+  </data>
+  <data name="SignUpAnonInfo_MadeForYou_Title_Text" xml:space="preserve">
+    <value>MADE FOR YOU</value>
+  </data>
+  <data name="SignUpAnonInfo_TailoredForYou_Text" xml:space="preserve">
+    <value>Tailored for you</value>
+  </data>
+  <data name="SignUpAnonInfo_TailoredDescription_Text" xml:space="preserve">
+    <value>If you input your profile data, your app will gather specific recommendations for your profile category. If you provide your postal code - your app will obtain specific information for your area (risks, recommendations, behavior rules).</value>
+  </data>
+  <data name="SignUpAnonInfo_Next_Button_Text" xml:space="preserve">
+    <value>NEXT</value>
+  </data>
+  <data name="SignUpAnonInfo_Privacy_Title_Text" xml:space="preserve">
+    <value>PRIVACY</value>
+  </data>
+  <data name="SignUpAnonInfo_CompletelyAnon_Text" xml:space="preserve">
+    <value>Completely Anonymous</value>
+  </data>
+  <data name="Profile_Profile_Title_Text" xml:space="preserve">
+    <value>Profile</value>
+  </data>
+  <data name="Profile_Nickname_Text" xml:space="preserve">
+    <value>VirusFighter007</value>
+  </data>
+  <data name="Profile_MyStatus_Text" xml:space="preserve">
+    <value>MY STATUS:</value>
+  </data>
+  <data name="Profile_PersonalData_Text" xml:space="preserve">
+    <value>PERSONAL DATA</value>
+  </data>
+  <data name="Profile_PersonalDataDescription_Text" xml:space="preserve">
+    <value>Gather personalized info by inputting your data for your demographic group.</value>
+  </data>
+  <data name="Profile_PhoneNumber_Text" xml:space="preserve">
+    <value>Phone number</value>
+  </data>
+  <data name="Profile_Country_Text" xml:space="preserve">
+    <value>Country</value>
+  </data>
+  <data name="Profile_PostalCode_Text" xml:space="preserve">
+    <value>Postal code</value>
+  </data>
+  <data name="Profile_AgeGroup_Text" xml:space="preserve">
+    <value>Age group</value>
+  </data>
+  <data name="Profile_PreConditions_Text" xml:space="preserve">
+    <value>Pre-conditions</value>
+  </data>
+  <data name="Encryption_Status_Description_Text" xml:space="preserve">
+    <value>All information in this app is encrypted and  totally anonymous.</value>
+  </data>
+  <data name="HealthStatus_Advice_Title_Text" xml:space="preserve">
+    <value>ATTENTION</value>
+  </data>
+  <data name="HealthStatus_Advice_Description_Default_TextFormat" xml:space="preserve">
+    <value>Your Health Status is: {0}.  To stay safe, please follow the government guidlines and recommendations.</value>
+  </data>
+  <data name="HealthStatus_Advice_MoreInfo_Text" xml:space="preserve">
+    <value>Find out more</value>
+  </data>
+  <data name="UserStatus_StatusCountdown_TextFormat" xml:space="preserve">
+    <value>{0} for {1} days</value>
+  </data>
+  <data name="Maps_Title_Text" xml:space="preserve">
+    <value>Maps</value>
+  </data>
+  <data name="Maps_YouLocation_Text" xml:space="preserve">
+    <value>Your Location</value>
+  </data>
+  <data name="Maps_HotLocation_Text" xml:space="preserve">
+    <value>Hot Location</value>
+  </data>
+  <data name="Maps_Infected_Text" xml:space="preserve">
+    <value>Infected</value>
+  </data>
+  <data name="Maps_InQuarantine_Text" xml:space="preserve">
+    <value>In quarantine</value>
+  </data>
+  <data name="Maps_ConsentRequest_Text" xml:space="preserve">
+    <value>Consent Request</value>
+  </data>
+  <data name="Maps_ConsentSuccessTitle_Text" xml:space="preserve">
+    <value>Success!</value>
+  </data>
+  <data name="Maps_ConsentSuccess_Text" xml:space="preserve">
+    <value>Thank you! You have help to prevent spreading COVID-19.</value>
+  </data>
+  <data name="Profile_ProfileTitle_Text" xml:space="preserve">
+    <value>TEXT</value>
+  </data>
+  <data name="Shell_Profile_Title_Text" xml:space="preserve">
+    <value>Profile</value>
+  </data>
+  <data name="Shell_Maps_Title_Text" xml:space="preserve">
+    <value>Maps</value>
+  </data>
+  <data name="Shell_Information_Title_Text" xml:space="preserve">
+    <value>Information</value>
+  </data>
+  <data name="Shell_Corporate_Title_Text" xml:space="preserve">
+    <value>Corporate</value>
+  </data>
+  <data name="Profile_AgeGroup_Elderly_Text" xml:space="preserve">
+    <value>Elderly (65+ years old)</value>
+  </data>
+  <data name="MedicalCodeSharing_CodeLabel_Text" xml:space="preserve">
+    <value>Tap code to copy and send to your patient so as they can change their status</value>
+  </data>
+  <data name="MedicalCodeSharing_PageName_Text" xml:space="preserve">
+    <value>Code generator</value>
+  </data>
+  <data name="MedicalCodeSharing_ShareBtn_Text" xml:space="preserve">
+    <value>SHARE CODE</value>
+  </data>
+  <data name="MedicalCodeSharing_Title_Text" xml:space="preserve">
+    <value>Please find your code for the following status:</value>
+  </data>
+  <data name="OnBoardind_MadeForYou_SubTitle" xml:space="preserve">
+    <value>Tailored for you</value>
+  </data>
+  <data name="OnBoarding_Connectivity_ErrorText" xml:space="preserve">
+    <value>For this app to work and help save lives, please connect with bluetooth</value>
+  </data>
+  <data name="OnBoarding_Connectivity_Instruction1" xml:space="preserve">
+    <value>100% anonymous</value>
+  </data>
+  <data name="OnBoarding_Connectivity_Instruction2" xml:space="preserve">
+    <value>Using bluetooth to know if you’ve been near someone who is infected</value>
+  </data>
+  <data name="OnBoarding_Connectivity_Instruction3" xml:space="preserve">
+    <value>No geo location</value>
+  </data>
+  <data name="OnBoarding_Connectivity_Instruction4_AndroidOnly" xml:space="preserve">
+    <value>We will only use the bluetooth and not the location when you give permission</value>
+  </data>
+  <data name="OnBoarding_Connectivity_SubTitle" xml:space="preserve">
+    <value>Connect with Bluetooth</value>
+  </data>
+  <data name="OnBoarding_Connectivity_Title" xml:space="preserve">
+    <value>Connectivity</value>
+  </data>
+  <data name="OnBoarding_MadeForYou_Instruction1" xml:space="preserve">
+    <value>Recommendations tailored to your profile category</value>
+  </data>
+  <data name="OnBoarding_MadeForYou_Instruction2" xml:space="preserve">
+    <value>Area specific risks, recommendations and behaviour rules</value>
+  </data>
+  <data name="OnBoarding_MadeForYou_Instruction3" xml:space="preserve">
+    <value>NO private information shared</value>
+  </data>
+  <data name="OnBoarding_MadeForYou_Title" xml:space="preserve">
+    <value>Made for you</value>
+  </data>
+  <data name="OnBoarding_Notifications_ErrorText" xml:space="preserve">
+    <value>For this app to work and help save lives, please allow notifications</value>
+  </data>
+  <data name="OnBoarding_Notifications_Instruction1" xml:space="preserve">
+    <value>Notifications that inform you if you’ve been near someone infected</value>
+  </data>
+  <data name="OnBoarding_Notifications_Instruction2" xml:space="preserve">
+    <value>NO emails</value>
+  </data>
+  <data name="OnBoarding_Notifications_Instruction3" xml:space="preserve">
+    <value>NO texts</value>
+  </data>
+  <data name="OnBoarding_Notifications_Instruction4" xml:space="preserve">
+    <value>Notifications sent through the app only</value>
+  </data>
+  <data name="OnBoarding_Notifications_SubTitle" xml:space="preserve">
+    <value>Important notifications</value>
+  </data>
+  <data name="OnBoarding_Notifications_Title" xml:space="preserve">
+    <value>Notifications</value>
+  </data>
+  <data name="OnBoarding_Privacy_Instruction1" xml:space="preserve">
+    <value>All information transmitted via encryption</value>
+  </data>
+  <data name="OnBoarding_Privacy_Instruction2" xml:space="preserve">
+    <value>NO information is linked to your identity</value>
+  </data>
+  <data name="OnBoarding_Privacy_Instruction3" xml:space="preserve">
+    <value>NO personal information leaves your phone</value>
+  </data>
+  <data name="OnBoarding_Privacy_SubTitle" xml:space="preserve">
+    <value>Completely anonymous</value>
+  </data>
+  <data name="OnBoarding_Privacy_Title" xml:space="preserve">
+    <value>Privacy</value>
+  </data>
+  <data name="Shell_Recommendations_Title_Text" xml:space="preserve">
+    <value>Health advice</value>
+  </data>
+  <data name="UserLogIn_Btn_Text" xml:space="preserve">
+    <value>LOG IN</value>
+  </data>
+  <data name="UserLogIn_NameEntry_Placeholder_Text" xml:space="preserve">
+    <value>Username</value>
+  </data>
+  <data name="UserLogIn_PageName_Text" xml:space="preserve">
+    <value>Log in</value>
+  </data>
+  <data name="UserLogIn_PasswordEntry_Placeholder_Text" xml:space="preserve">
+    <value>Password</value>
+  </data>
+  <data name="UserLogIn_PasswordEntry_Requirements_Text" xml:space="preserve">
+    <value>Username or password not recognized</value>
+  </data>
+  <data name="UserLogIn_Username_EmptyErrorMessage_Text" xml:space="preserve">
+    <value>Username should not be empty</value>
+  </data>
+  <data name="UserLogIn_Password_EmptyErrorMessage_Text" xml:space="preserve">
+    <value>Password should not be empty</value>
+  </data>
+  <data name="ApplyCode_Btn_Text" xml:space="preserve">
+    <value>APPLY CODE</value>
+  </data>
+  <data name="ApplyCode_PageDescription1_Text" xml:space="preserve">
+    <value>By continuing you are allowing us to inform others that they may be at risk of infection. This could save their life.</value>
+  </data>
+  <data name="ApplyCode_PageDescription2_Text" xml:space="preserve">
+    <value>Remember, this app never tracks your location or identity. You are completely anonymous.</value>
+  </data>
+  <data name="ApplyCode_PageDescription3_Text" xml:space="preserve">
+    <value>Thank you for helping keep others safe.</value>
+  </data>
+  <data name="ApplyCode_PageDescription4_Text" xml:space="preserve">
+    <value>Thank you for helping save lives</value>
+  </data>
+  <data name="ApplyCode_PageName_Text" xml:space="preserve">
+    <value>Enter your code</value>
+  </data>
+  <data name="ApplyCode_PageTitle1_Text" xml:space="preserve">
+    <value>Please enter the unique code your healthcare professional has given you. This will update your health status in this app.</value>
+  </data>
+  <data name="ApplyCode_PageTitle2_Text" xml:space="preserve">
+    <value>Update your status and save lives</value>
+  </data>
+  <data name="ApplyCode_InputError_Text" xml:space="preserve">
+    <value>This code is not recognized</value>
+  </data>
+  <data name="ApplyCode_InputPlaceholder_Text" xml:space="preserve">
+    <value>Enter your code here</value>
+  </data>
+  <data name="Profile_ApplyCodeBtn_Text" xml:space="preserve">
+    <value>APPLY CODE</value>
+  </data>
+  <data name="MedicalLogIn_Btn_Text" xml:space="preserve">
+    <value>CONTINUE</value>
+  </data>
+  <data name="MedicalLogIn_Entry_Placeholder_Text" xml:space="preserve">
+    <value>Health security ID</value>
+  </data>
+  <data name="MedicalLogIn_PageName_Text" xml:space="preserve">
+    <value>Professional</value>
+  </data>
+  <data name="MedicalLogIn_Title_Text" xml:space="preserve">
+    <value>This section of the app is for healthcare professionals only. Please enter your health security ID to continue.</value>
+  </data>
+  <data name="MedicalLogIn_Entry_Requirements_Text" xml:space="preserve">
+    <value>Health ID not recognized</value>
+  </data>
+  <data name="Shell_Medical_Title_Text" xml:space="preserve">
+    <value>Medical</value>
+  </data>
+  <data name="MedicalActivated_Btn_Text" xml:space="preserve">
+    <value>DONE</value>
+  </data>
+  <data name="MedicalActivated_MainLabel_Text" xml:space="preserve">
+    <value>You have now activated the medical section of the app</value>
+  </data>
+  <data name="MedicalActivated_SecondaryLabel_Text" xml:space="preserve">
+    <value>Here you can generate codes to send to your patients, so as they can update their status</value>
+  </data>
+  <data name="MedicalActivated_ThankyouLabel_Text" xml:space="preserve">
+    <value>Thank you</value>
+  </data>
+  <data name="MedicalLogIn_MedicalId_EmptyErrorMessage_Text" xml:space="preserve">
+    <value>Medical Id should not be empty</value>
+  </data>
+  <data name="Medical_FirstStep_Title" xml:space="preserve">
+    <value>Step 01</value>
+  </data>
+  <data name="Medical_FirstStep_Description" xml:space="preserve">
+    <value>Select the status for the code</value>
+  </data>
+  <data name="Medical_SecondStep_Title" xml:space="preserve">
+    <value>Step 02</value>
+  </data>
+  <data name="Medical_SecondStep_Description" xml:space="preserve">
+    <value>Select when the patient approximately first became infected</value>
+  </data>
+  <data name="Medical_ThirdStep_Title" xml:space="preserve">
+    <value>Step 03</value>
+  </data>
+  <data name="Medical_ThirdStep_Description" xml:space="preserve">
+    <value>Generate patient code</value>
+  </data>
+  <data name="Medical_Title_Text" xml:space="preserve">
+    <value>Medical</value>
+  </data>
+  <data name="Medical_CreateCodeBtn_Text" xml:space="preserve">
+    <value>CREATE CODE</value>
+  </data>
+  <data name="Medical_EditBtn_Text" xml:space="preserve">
+    <value>+Edit</value>
+  </data>
+  <data name="Medical_FirstStepEmpty_Error" xml:space="preserve">
+    <value>Please select the patients status</value>
+  </data>
+  <data name="ChangeStatusLink_Button_Text" xml:space="preserve">
+    <value>CHANGE STATUS</value>
+  </data>
+  <data name="ChangeStatusLink_Explanation_Text" xml:space="preserve">
+    <value>Please use the link below to update your health status</value>
+  </data>
+  <data name="Bluetooth_Reminder_Title_Text" xml:space="preserve">
+    <value>BLUETOOTH CONNECTIVITY</value>
+  </data>
+  <data name="Encryption_Status_Title_Text" xml:space="preserve">
+    <value>ENCRYPTION</value>
+  </data>
+  <data name="Bluetooth_Reminder_Description_Text" xml:space="preserve">
+    <value>Please open this app regularly when around others to enhance your bluetooth connectivity.</value>
+  </data>
+  <data name="Profile_Protecting_Text" xml:space="preserve">
+    <value>PROTECTING</value>
+  </data>
+  <data name="Notification_Allow_Text" xml:space="preserve">
+    <value>Allow</value>
+  </data>
+  <data name="Notification_DontAllow_Text" xml:space="preserve">
+    <value>Don't allow</value>
+  </data>
+  <data name="Notification_Retry_Text" xml:space="preserve">
+    <value>Retry</value>
+  </data>
+  <data name="Notification_BluetoothNotification_Text" xml:space="preserve">
+    <value>COVID Resistance would like to make data available to nearby Bluetooth devices even when you're not using the app.</value>
+  </data>
+  <data name="Notification_InAppNotification_Text" xml:space="preserve">
+    <value>Allow COVID Resistance to send you notifications?</value>
+  </data>
+  <data name="Exception_TimedOut_Text" xml:space="preserve">
+    <value>Connection timed out, please try again later.</value>
+  </data>
+  <data name="Exception_UpdateRequired" xml:space="preserve">
+    <value>Update required</value>
+  </data>
+  <data name="Exception_UnderMaintenance" xml:space="preserve">
+    <value>Under maintenance</value>
+  </data>
+  <data name="Maintenance_Description_Text" xml:space="preserve">
+    <value>Under maintenance</value>
+  </data>
+  <data name="Exception_Unknown" xml:space="preserve">
+    <value>Oops!</value>
+  </data>
+  <data name="Android_BluetoothNotification_Title" xml:space="preserve">
+    <value>Advertising device via Bluetooth!</value>
+  </data>
+  <data name="Android_BluetoothNotification_Content" xml:space="preserve">
+    <value>This device is discoverable to others nearby.</value>
+  </data>
+  <data name="Android_BluetoothNotification_ChannelName" xml:space="preserve">
+    <value>Bluetooth Service.</value>
+  </data>
+  <data name="BluetoothNotification_Error_Title" xml:space="preserve">
+    <value>Bluetooth error.</value>
+  </data>
+  <data name="BluetoothNotification_Disabled_ErrorText" xml:space="preserve">
+    <value>Bluetooth is currently unavailable. Either bluetooth is not supported by your device or it is disabled. Please, check device bluetooth settings.</value>
+  </data>
+  <data name="BluetoothNotification_Denied_ErrorText" xml:space="preserve">
+    <value>Permission to use bluetooth was denied. Please, grant permission to use bluetooth in the application settings to proceed.</value>
+  </data>
+  <data name="ApplyCodeNotFoundException_ErrorText" xml:space="preserve">
+    <value>Medical code not found or already taken.</value>
+  </data>
+  <data name="ApplyCodeExpiredException_ErrorText" xml:space="preserve">
+    <value>Medical code is expired.</value>
+  </data>
+  <data name="CreateProfileValidationException_TokenIsEmpty_ErrorText" xml:space="preserve">
+    <value>The UserToken field is required.</value>
+  </data>
+  <data name="CreateProfileValidationException_DuplicateUserToken_ErrorText" xml:space="preserve">
+    <value>This user token is already taken.</value>
+  </data>
+  <data name="CreateProfileValidationException_Username_ErrorText" xml:space="preserve">
+    <value>The Username field is required.</value>
+  </data>
+  <data name="CreateProfileValidationException_DuplicateUserName_ErrorText" xml:space="preserve">
+    <value>User name is already taken.</value>
+  </data>
+  <data name="CreateProfileValidationException_Password_ErrorText" xml:space="preserve">
+    <value>The Password field is require</value>
+  </data>
+  <data name="CreateProfileValidationException_PasswordTooShort_ErrorText" xml:space="preserve">
+    <value>Passwords must be at least 8 characters.</value>
+  </data>
+  <data name="CreateProfileValidationException_PasswordRequiresUpper_ErrorText" xml:space="preserve">
+    <value>Passwords must have at least one uppercase ('A'-'Z').</value>
+  </data>
+  <data name="CreateProfileValidationException_PasswordRequiresDigit_ErrorText" xml:space="preserve">
+    <value>Passwords must have at least one digit ('0'-'9').</value>
+  </data>
+  <data name="CreateProfileValidationException_PasswordRequiresNonAlphanumeric_ErrorText" xml:space="preserve">
+    <value>Passwords must have at least one non alphanumeric character.</value>
+  </data>
+  <data name="LoginException_InvalidGrant_ErrorText" xml:space="preserve">
+    <value>Username or password not recognised.</value>
+  </data>
+  <data name="ChangeStatusCodeGenerationException_StatusId_ErrorText" xml:space="preserve">
+    <value>The StatusId field is required.</value>
+  </data>
+  <data name="ChangeStatusCodeGenerationException_StatusChangedOn_ErrorText" xml:space="preserve">
+    <value>The StatusChangedOn field is required.</value>
+  </data>
+  <data name="MedicalAuthenticationException_InvalidHealthSecurityId_ErrorText" xml:space="preserve">
+    <value>Health security id is already taken or expired.</value>
+  </data>
+  <data name="Exception_NoInternetConnection" xml:space="preserve">
+    <value>Internet connection is not available.</value>
+  </data>
+  <data name="ErrorDialog_Title" xml:space="preserve">
+    <value>Error</value>
+  </data>
+  <data name="ErrorDialog_Message_Generic" xml:space="preserve">
+    <value>Something went wrong. Please try again later.</value>
+  </data>
+  <data name="ErrorDialog_Accept" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="CreateProfileValidationException_Username_HasSpecialSymbolErrorText" xml:space="preserve">
+    <value>Special characters in username are not allowed</value>
+  </data>
+  <data name="MedicalCodeSharing_ShareSystem_TitleText" xml:space="preserve">
+    <value>Share Code</value>
+  </data>
+</root>

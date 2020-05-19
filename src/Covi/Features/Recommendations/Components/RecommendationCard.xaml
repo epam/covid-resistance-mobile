@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:controls="clr-namespace:Covi.Features.Controls"
+    x:Class="Covi.Features.Recommendations.Components.RecommendationCard">
+    <ContentView.Content>
+        <controls:Card
+            Style="{StaticResource CardStyle}"
+            Margin="0,0,0,8">
+            <StackLayout Orientation="Vertical">
+                <Label
+                    Text="{Binding Title}"
+                    Style="{StaticResource TextTitle16}"
+                    TextColor="{StaticResource AccentColor}"
+                    Margin="16,16,16,0"
+                    IsVisible="{Binding Title, Converter={StaticResource NotEmptyStringToBoolConverter }}"/>
+                <Label
+                    Text="{Binding SubTitle}"
+                    Style="{StaticResource TextTitle16}"
+                    Margin="16,8,16,0"
+                    IsVisible="{Binding SubTitle, Converter={StaticResource NotEmptyStringToBoolConverter }}"/>
+                <Label
+                    Text="{Binding Content}"
+                    Style="{StaticResource TextBody}"
+                    FontSize="{StaticResource TextSizeTitle16}"
+                    Margin="16,8,16,16"/>
+            </StackLayout>
+        </controls:Card>
+    </ContentView.Content>
+</ContentView>
+

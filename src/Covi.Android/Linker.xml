@@ -1,0 +1,29 @@
+﻿<linker>
+  <assembly fullname="Prism.Forms">
+    <type fullname="*" />
+  </assembly>
+ <assembly fullname="Prism.Forms.Extended">
+    <type fullname="*" />
+  </assembly>
+  <assembly fullname="Prism.Container.Extensions">
+    <type fullname="*" />
+  </assembly>    
+   <assembly fullname="DryIoc">
+    <type fullname="*" />
+  </assembly>
+  <assembly fullname="System.Reflection.Emit.Lightweight">
+    <type fullname="*" />
+  </assembly>
+  <assembly fullname="System.Reflection.Emit.ILGeneration">
+    <type fullname="*" />
+  </assembly>  
+  <assembly fullname="Prism.DryIoc.Extensions">
+    <type fullname="*" />
+  </assembly>
+  <assembly fullname="ReactiveUI.XamForms">
+    <type fullname="*" />
+  </assembly>
+  <assembly fullname="LiteDB">
+    <type fullname="*" />
+  </assembly>
+</linker>

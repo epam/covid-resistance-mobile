@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:controls="clr-namespace:Covi.Features.Controls"
+    xmlns:resources="clr-namespace:Covi.Resources"
+    xmlns:vm="clr-namespace:Covi.Features.UserProfile.Components.UserStatusCard"
+    xmlns:forms="clr-namespace:FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms"
+    xmlns:components="clr-namespace:Covi.Features.UserProfile.Components.UserStatusCard.Components;assembly=Covi"
+    x:Class="Covi.Features.UserProfile.Components.UserStatusCard.UserStatusCardView">
+    <ContentView.Content>
+        <controls:Card
+            Style="{StaticResource ContentContainerCardStyle}">
+            <Grid RowSpacing="24">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <Label Grid.Row="0"
+                       Grid.Column="0"
+                       Text="{Binding UserName}"
+                       HorizontalOptions="Start"
+                       VerticalOptions="Center"
+                       Style="{StaticResource TextCardHeadlineStyle}"/>
+                <components:ProtectionStatusView x:Name="protectingView"
+                                           Grid.Column="1"
+                                           VerticalOptions="Center"
+                                           Grid.Row="0"/>
+
+                <Grid Grid.Row="1"
+                      Grid.Column="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+                    <BoxView Grid.Column="0"
+                             Style="{StaticResource CircleBoxStyle}"
+                             VerticalOptions="Center"
+                             BackgroundColor="{Binding Severity, Converter={StaticResource HealthStatusColorConverter}}"/>
+                    <Label Grid.Column="1"
+                           Text="{Binding HealthStatus}"
+                           VerticalOptions="Center"
+                           LineBreakMode="TailTruncation"
+                           MaxLines="1"
+                           Style="{StaticResource TextCardBodyStyle}"
+                           Margin="8,0,0,0"/>
+                </Grid>
+                <Label
+                    Grid.Row="1"
+                    Grid.Column="1"
+                    HorizontalOptions="End"
+                    LineBreakMode="TailTruncation"
+                    MaxLines="1"
+                    Text="{Binding StatusCountdown}"
+                    Style="{StaticResource TextCardBodyStyle}"/>
+
+            </Grid>
+
+        </controls:Card>
+    </ContentView.Content>
+</ContentView>

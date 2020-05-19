@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:controls="clr-namespace:Covi.Features.Controls"
+    xmlns:resources="clr-namespace:Covi.Resources"
+    xmlns:forms="clr-namespace:FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms"
+    xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:platformSpecific="clr-namespace:Covi.PlatformSpecific;assembly=Covi"
+    mc:Ignorable="d"
+    x:Class="Covi.Features.UserProfile.Components.HealthStatusAdvice.HealthStatusAdviceView">
+    <ContentView.Content>
+        <controls:Card
+            Style="{StaticResource ContentContainerCardStyle}">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+
+                <Grid Grid.Row="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="{StaticResource IconImageWidth}"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <forms:SvgCachedImage Grid.Column="0"
+                                          Style="{StaticResource IconImageStyle}"
+                                          Source="attention.svg">
+                    </forms:SvgCachedImage>
+                    <Label Grid.Column="1"
+                           VerticalTextAlignment="Center"
+                           HorizontalTextAlignment="Start"
+                           Margin="16,0,0,0"
+                           Text="{x:Static resources:Localization.HealthStatus_Advice_Title_Text}"
+                           Style="{StaticResource TextCardTitleStyle}"/>
+                </Grid>
+
+                <platformSpecific:DashedLine Grid.Row="1"
+                                             Margin="0, 16, 0, 16"
+                                             Style="{StaticResource DashedLineStyle}"/>
+
+                <Label Grid.Row="2"
+                       Text="{Binding Description}"
+                       Style="{StaticResource TextCardBodyStyle}"/>
+
+                <Grid Grid.Row="3"
+                      Margin="0,16,0,0" IsVisible="{Binding HasMoreInfo, FallbackValue=false, TargetNullValue=false}">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+                    <Label Grid.Column="0"
+                           Text="{x:Static resources:Localization.HealthStatus_Advice_MoreInfo_Text}"
+                           VerticalOptions="Center"
+                           Style="{StaticResource TapableText16}"/>
+                    <forms:SvgCachedImage Grid.Column="1"
+                                          Style="{StaticResource IconImageStyle}"
+                                          Source="arrow.svg">
+                    </forms:SvgCachedImage>
+                    <Grid.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding MoreInfoCommand}" />
+                    </Grid.GestureRecognizers>
+                </Grid>
+            </Grid>
+        </controls:Card>
+    </ContentView.Content>
+</ContentView>

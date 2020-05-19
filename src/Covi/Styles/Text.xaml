@@ -1,0 +1,360 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<?xaml-comp compile="true" ?>
+
+<ResourceDictionary
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="/Styles/Colors.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+
+    <x:Double
+        x:Key="TextSizeHeadlineH1">36</x:Double>
+    <x:Double
+        x:Key="TextSizeHeadlineH2">26</x:Double>
+    <x:Double
+        x:Key="TextSizeHeadlineH3">23</x:Double>
+    <x:Double
+        x:Key="TextSizeTitle15">15</x:Double>
+    <x:Double
+        x:Key="TextSizeTitle16">16</x:Double>
+    <x:Double
+        x:Key="TextSizeSubhead">16</x:Double>
+    <x:Double
+        x:Key="TextSizeBody">15</x:Double>
+    <x:Double
+        x:Key="TextSizeCaption">12</x:Double>
+    <x:Double
+        x:Key="TextSizeSmallCaption">11</x:Double>
+    <x:Double
+        x:Key="TextSizeLight">14</x:Double>
+    <x:Double
+        x:Key="TextSizeRegular">15</x:Double>
+
+    <Style
+        x:Key="FontMedium"
+        TargetType="Label">
+        <Setter
+            Property="FontFamily">
+            <Setter.Value>
+                <OnPlatform
+                    x:TypeArguments="x:String">
+                    <On
+                        Platform="iOS"
+                        Value="SFProDisplay-Medium"/>
+                    <On
+                        Platform="Android"
+                        Value="SFProDisplay-Medium.ttf#Medium"/>
+                </OnPlatform>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style
+        x:Key="FontBold"
+        TargetType="Label">
+        <Setter
+            Property="FontFamily">
+            <Setter.Value>
+                <OnPlatform
+                    x:TypeArguments="x:String">
+                    <On
+                        Platform="iOS"
+                        Value="SFProDisplay-Bold"/>
+                    <On
+                        Platform="Android"
+                        Value="SFProDisplay-Bold.ttf#Bold"/>
+                </OnPlatform>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style
+        x:Key="FontRegular"
+        TargetType="Label">
+        <Setter
+            Property="FontFamily">
+            <Setter.Value>
+                <OnPlatform
+                    x:TypeArguments="x:String">
+                    <On
+                        Platform="iOS"
+                        Value="SFProDisplay-Regular"/>
+                    <On
+                        Platform="Android"
+                        Value="SFProDisplay-Regular.ttf#Regular"/>
+                </OnPlatform>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style
+        x:Key="FontSemibold"
+        TargetType="Label">
+        <Setter
+            Property="FontFamily">
+            <Setter.Value>
+                <OnPlatform
+                    x:TypeArguments="x:String">
+                    <On
+                        Platform="iOS"
+                        Value="SFProDisplay-Semibold"/>
+                    <On
+                        Platform="Android"
+                        Value="SFProDisplay-Semibold.ttf#Semibold"/>
+                </OnPlatform>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style
+        x:Key="FontLight"
+        TargetType="Label">
+        <Setter
+            Property="FontFamily">
+            <Setter.Value>
+                <OnPlatform
+                    x:TypeArguments="x:String">
+                    <On
+                        Platform="iOS"
+                        Value="SFProDisplay-Light"/>
+                    <On
+                        Platform="Android"
+                        Value="SFProDisplay-Light.ttf#Light"/>
+                </OnPlatform>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <!--The highest dark header on white background-->
+    <Style
+        x:Key="TextHeadlineH1"
+        BasedOn="{StaticResource FontBold}"
+        TargetType="Label">
+        <Setter
+            Property="TextColor"
+            Value="{StaticResource OnSecondaryColor}" />
+        <Setter
+            Property="FontSize"
+            Value="{StaticResource TextSizeHeadlineH1}" />
+    </Style>
+
+    <!--The H2 white header on primary color background-->
+    <Style
+        x:Key="TextHeadlineH2"
+        BasedOn="{StaticResource FontBold}"
+        TargetType="Label">
+        <Setter
+            Property="TextColor"
+            Value="{StaticResource OnPrimaryColor}" />
+        <Setter
+            Property="FontSize"
+            Value="{StaticResource TextSizeHeadlineH2}" />
+    </Style>
+
+    <Style
+        x:Key="TextHeadlineH3"
+        BasedOn="{StaticResource FontSemibold}"
+        TargetType="Label">
+        <Setter
+            Property="TextColor"
+            Value="{StaticResource OnSecondaryColor}" />
+        <Setter
+            Property="FontSize"
+            Value="{StaticResource TextSizeHeadlineH3}" />
+    </Style>
+
+    <Style
+        x:Key="TextTitle15"
+        BasedOn="{StaticResource FontSemibold}"
+        TargetType="Label">
+        <Setter
+            Property="TextColor"
+            Value="{StaticResource OnSecondaryColor}" />
+        <Setter
+            Property="FontSize"
+            Value="{StaticResource TextSizeTitle15}" />
+    </Style>
+
+    <Style
+        x:Key="TextTitle16"
+        BasedOn="{StaticResource FontSemibold}"
+        TargetType="Label">
+        <Setter
+            Property="TextColor"
+            Value="{StaticResource OnSecondaryColor}" />
+        <Setter
+            Property="FontSize"
+            Value="{StaticResource TextSizeTitle16}" />
+    </Style>
+
+    <Style
+        x:Key="TapableText16"
+        BasedOn="{StaticResource FontSemibold}"
+        TargetType="Label">
+        <Setter
+            Property="TextColor"
+            Value="{StaticResource PrimaryColor}" />
+        <Setter
+            Property="FontSize"
+            Value="{StaticResource TextSizeTitle16}" />
+    </Style>
+
+    <!--<Style
+        x:Key="TextSubhead"
+        TargetType="Label">
+        <Setter
+            Property="TextColor"
+            Value="{StaticResource OnSecondaryColor}" />
+        <Setter
+            Property="FontSize"
+            Value="{StaticResource TextSizeSubhead}" />
+    </Style>
+
+    <Style
+        x:Key="TextSubheadSecondary"
+        BasedOn="{StaticResource TextSubhead}"
+        TargetType="Label">
+        <Setter
+            Property="TextColor"
+            Value="{StaticResource OnTertiaryColor}" />
+    </Style>-->
+
+    <Style
+        x:Key="TextBody"
+        BasedOn="{StaticResource FontRegular}"
+        TargetType="Label">
+        <Setter
+            Property="TextColor"
+            Value="{StaticResource OnSecondaryColor}" />
+        <Setter
+            Property="FontSize"
+            Value="{StaticResource TextSizeBody}" />
+    </Style>
+
+    <!--<Style
+        x:Key="TextBodySecondary"
+        BasedOn="{StaticResource TextBody}"
+        TargetType="Label">
+        <Setter
+            Property="TextColor"
+            Value="{StaticResource OnSecondaryColor}" />
+    </Style>-->
+
+    <Style
+        x:Key="TextCaption"
+        TargetType="Label">
+        <Setter
+            Property="TextColor"
+            Value="{StaticResource OnSecondaryColor}" />
+        <Setter
+            Property="FontSize"
+            Value="{StaticResource TextSizeCaption}" />
+    </Style>
+
+    <Style
+        x:Key="TextCardTitleStyle"
+        TargetType="Label">
+        <Setter
+            Property="TextColor"
+            Value="{StaticResource PrimaryColor}" />
+        <Setter
+            Property="FontSize"
+            Value="{StaticResource TextSizeCaption}" />
+        <Setter Property="LineBreakMode"
+                Value="TailTruncation" />
+        <Setter Property="MaxLines"
+                Value="1" />
+        <Setter Property="VerticalTextAlignment"
+                Value="Center" />
+        <Setter Property="HorizontalTextAlignment"
+                Value="Start" />
+    </Style>
+
+    <Style
+        x:Key="TextCardHeadlineStyle"
+        TargetType="Label" BasedOn="{StaticResource TextHeadlineH3}">
+        <Setter
+            Property="TextColor"
+            Value="{StaticResource OnSurfaceColor}" />
+        <Setter Property="LineBreakMode"
+                Value="TailTruncation" />
+        <Setter Property="MaxLines"
+                Value="1" />
+    </Style>
+
+    <Style
+        x:Key="TextCardBodyStyle"
+        TargetType="Label">
+        <Setter Property="TextColor"
+                Value="{StaticResource OnSurfaceColor}" />
+        <Setter Property="LineBreakMode"
+                Value="WordWrap" />
+        <Setter Property="MaxLines"
+                Value="99" />
+    </Style>
+
+    <Style
+        x:Key="TextCaptionSecondary"
+        BasedOn="{StaticResource TextCaption}"
+        TargetType="Label">
+        <Setter
+            Property="TextColor"
+            Value="{StaticResource OnTertiaryColor}" />
+    </Style>
+
+    <Style
+        x:Key="TextListItemsLight"
+        BasedOn="{StaticResource FontLight}"
+        TargetType="Label">
+        <Setter
+            Property="TextColor"
+            Value="{StaticResource OnSecondaryColor}" />
+        <Setter
+            Property="FontSize"
+            Value="{StaticResource TextSizeLight}" />
+    </Style>
+
+    <Style
+        x:Key="TextListItemsRegular"
+        BasedOn="{StaticResource FontRegular}"
+        TargetType="Label">
+        <Setter
+            Property="TextColor"
+            Value="{StaticResource OnSecondaryColor}" />
+        <Setter
+            Property="FontSize"
+            Value="{StaticResource TextSizeRegular}" />
+    </Style>
+
+    <Style
+        x:Key="TextValidationError"
+        BasedOn="{StaticResource FontRegular}"
+        TargetType="Label">
+        <Setter
+            Property="TextColor"
+            Value="{StaticResource ErrorColor}" />
+        <Setter
+            Property="FontSize"
+            Value="{StaticResource TextSizeRegular}" />
+    </Style>
+
+    <Style
+        x:Key="TextPageTitleStyle"
+        BasedOn="{StaticResource TextHeadlineH1}"
+        TargetType="Label">
+        <Setter
+            Property="TextColor"
+            Value="{StaticResource OnSurfaceColor}" />
+    </Style>
+
+    <Style
+        x:Key="TextPageTitleVariant2Style"
+        BasedOn="{StaticResource TextHeadlineH2}"
+        TargetType="Label">
+        <Setter
+            Property="TextColor"
+            Value="{StaticResource OnPrimaryColor}" />
+    </Style>
+
+</ResourceDictionary>

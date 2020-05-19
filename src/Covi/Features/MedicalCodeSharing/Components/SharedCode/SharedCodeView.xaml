@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:controls="clr-namespace:Covi.Features.Controls;assembly=Covi"
+             xmlns:resources="clr-namespace:Covi.Resources;assembly=Covi"
+             xmlns:local="clr-namespace:Covi.Styles;assembly=Covi"
+             xmlns:platformSpecific="clr-namespace:Covi.PlatformSpecific;assembly=Covi"
+             x:Class="Covi.Features.MedicalCodeSharing.Components.SharedCode.SharedCodeView">
+    <ContentView.Content>
+        <controls:Card Style="{StaticResource CardStyle}"
+                       Padding="0,0,0,0">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="100" />
+                </Grid.ColumnDefinitions>
+                <Label x:Name="CodeLabel"
+                       Text="{Binding Code}"
+                       Grid.Row="0"
+                       Grid.Column="0"
+                       Grid.ColumnSpan="2"
+                       Style="{StaticResource TextHeadlineH1}" 
+                       FontSize="32"
+                       Margin="16,16,16,0"
+                       HorizontalOptions="FillAndExpand"
+                       HorizontalTextAlignment="Center">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding CopyCodeCommand}" />
+                    </Label.GestureRecognizers>
+                </Label>
+
+                <controls:Card Style="{StaticResource CardStyle}"
+                               x:Name="CopyPopUp" 
+                               Grid.Row="0"
+                               Grid.Column="1"
+                               Padding="0,0,0,0"
+                               Margin="0,16,8,0"
+                               BackgroundColor="{StaticResource SurfaceColor}"
+                               IsVisible="False">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Label Grid.Column="0"
+                               Text="{x:Static local:IconFont.Check}"
+                               Margin="8,0,0,0"
+                               VerticalTextAlignment="Center"
+                               FontFamily="{StaticResource FontAwesome}" />
+
+                        <Label Grid.Column="1"
+                               VerticalTextAlignment="Center"
+                               Style="{StaticResource TextTitle15}" 
+                               Text ="Copied"/>
+                    </Grid>
+                </controls:Card>
+
+                <platformSpecific:DashedLine Grid.Row="1"
+                                             Grid.Column="0"
+                                             Grid.ColumnSpan="2"
+                                             Margin="16,16,16,0"
+                                             Style="{StaticResource DashedLineStyle}"/>
+
+                <Label Grid.Row="2"
+                       Grid.Column="0"
+                       Grid.ColumnSpan="2"
+                       Text="{x:Static resources:Localization.MedicalCodeSharing_CodeLabel_Text}"
+                       Style="{StaticResource TextBody}" 
+                       HorizontalTextAlignment="Center"
+                       Padding="0,0,0,16"
+                       Margin="16,16,16,16"/>
+            </Grid>
+        </controls:Card>
+    </ContentView.Content>
+</ContentView>

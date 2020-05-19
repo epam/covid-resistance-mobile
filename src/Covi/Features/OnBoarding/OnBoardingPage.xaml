@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:base="clr-namespace:Covi.Features.Components"
+             xmlns:components="clr-namespace:Covi.Features.OnBoarding.Components"
+             xmlns:controls="clr-namespace:Covi.Features.Controls;assembly=Covi"
+             xmlns:resources="clr-namespace:Covi.Resources"
+             x:Class="Covi.Features.OnBoarding.OnBoardingPage"
+             Style="{StaticResource RootStandalonePageStyle}">
+    <ContentPage.Content>
+        <Grid BackgroundColor="{StaticResource SurfaceColor}">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <components:OnBoardingCarouselView
+                Grid.Row="0"
+                Margin="32,32,32,0"
+                OnBoardingItems="{Binding OnBoardingActivities}"
+                SelectedItemIndex="{Binding SelectedActivityIndex}"/>
+            <Button
+                Grid.Row="1"
+                Margin="32,0"
+                Text="{x:Static resources:Localization.CreateProfile_Next_Button_Text}"
+                Style="{StaticResource ButtonStyle}"
+                Command="{Binding GoToNextStepCommand}"/>
+             <components:HorizontalSelectedItemIndicatorControl
+                 Grid.Row="2"
+                 x:Name="SelectedItemIndicator"
+                 HorizontalOptions="Center"
+                 VerticalOptions="End"
+                 SelectedItemIndex="{Binding SelectedActivityIndex}"
+                 ItemCount="{Binding ActivitiesCount}"
+                 IndicatorColor="{StaticResource AccentColor}"
+                 Margin="0,12,0,16"/>
+            <base:PoweredBy
+                Grid.Row="3"
+                HorizontalOptions="Center"/>
+            <controls:BusyIndicatorView
+                Grid.Row="0"
+                Grid.RowSpan="3"
+                IsActive="{Binding IsBusy}"/>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

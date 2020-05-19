@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:recommendation="clr-namespace:Covi.Features.Recommendations.Components"
+    xmlns:resources="clr-namespace:Covi.Resources"
+    xmlns:controls="clr-namespace:Covi.Features.Controls;assembly=Covi"
+    x:Class="Covi.Features.Recommendations.RecommendationsPage"
+    Title="{x:Static resources:Localization.Shell_Recommendations_Title_Text}"
+    Style="{StaticResource RootStandalonePageStyle}">
+    <ContentPage.Content>
+        <Grid HorizontalOptions="FillAndExpand"
+              RowSpacing="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <ContentView Grid.Row="0"
+                         x:Name="Header"
+                         Style="{StaticResource PageHeaderStyle}">
+                <Label Text="{x:Static resources:Localization.Shell_Recommendations_Title_Text}"
+                       Style="{StaticResource TextPageTitleStyle}"/>
+            </ContentView>
+            <BoxView Grid.Row="1"
+                     Style="{StaticResource SeparatorStyle}"/>
+
+            <ContentView Grid.Row="2"
+                  Style="{StaticResource ContentContainerVariant2Style}"
+                  Padding="8,0,8,8">
+                <ListView HasUnevenRows="True"
+                          Margin="0,8,0,0"
+                          VerticalScrollBarVisibility="Never"
+                          IsVisible="{Binding IsBusy, Converter={StaticResource InvertedBoolConverter}}"
+                          ItemsSource="{Binding Recommendations}"
+                          SeparatorVisibility="None"
+                          SelectionMode="None"
+                          HorizontalOptions="Start">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <recommendation:RecommendationCard/>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </ContentView>
+
+            <controls:BusyIndicatorView Grid.Row="2"
+                                        IsActive="{Binding IsBusy}"/>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>
+

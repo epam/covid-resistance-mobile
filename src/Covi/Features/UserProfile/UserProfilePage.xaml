@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:vm="clr-namespace:Covi.Features.UserProfile"
+    x:Class="Covi.Features.UserProfile.UserProfilePage"
+    xmlns:userProfileCard="clr-namespace:Covi.Features.UserProfile.Components.UserStatusCard"
+    xmlns:resources="clr-namespace:Covi.Resources"
+    xmlns:changeStatus="clr-namespace:Covi.Features.UserProfile.Components.ChangeStatus;assembly=Covi"
+    xmlns:encryptionStatus="clr-namespace:Covi.Features.UserProfile.Components.EncryptionStatus;assembly=Covi"
+    xmlns:healthStatusAdvice="clr-namespace:Covi.Features.UserProfile.Components.HealthStatusAdvice;assembly=Covi"
+    xmlns:bluetoothReminder="clr-namespace:Covi.Features.UserProfile.Components.BluetoothReminder;assembly=Covi"
+    xmlns:controls="clr-namespace:Covi.Features.Controls"
+    Title="{x:Static resources:Localization.Shell_Profile_Title_Text}"
+    IconImageSource="{StaticResource IconTabProfile}"
+    Style="{StaticResource RootStandalonePageStyle}">
+    <ContentPage.Content>
+        <Grid RowSpacing="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <ContentView
+                x:Name="Header"
+                Style="{StaticResource PageHeaderStyle}">
+                <Label Text="{x:Static resources:Localization.Shell_Profile_Title_Text}"
+                       Style="{StaticResource TextPageTitleStyle}"/>
+            </ContentView>
+            <BoxView Grid.Row="1"
+                     Style="{StaticResource SeparatorStyle}"/>
+
+            <ScrollView Grid.Row="2"
+                        HorizontalOptions="FillAndExpand"
+                        VerticalOptions="FillAndExpand"
+                        Style="{StaticResource ContentContainerVariant2Style}">
+                <Grid RowSpacing="8">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+
+                    <userProfileCard:UserStatusCardView x:Name="userStatusCardView"
+                                                        Grid.Row="0"/>
+
+                    <changeStatus:ChangeStatusView x:Name="changeStatus"
+                                               Grid.Row="1"/>
+
+                    <healthStatusAdvice:HealthStatusAdviceView x:Name="infectedStatusNotificationView"
+                                                                     Grid.Row="2"/>
+
+                    <encryptionStatus:EncryptionStatusView x:Name="encryption"
+                                           Grid.Row="3"/>
+
+                    <bluetoothReminder:BluetoothReminderView x:Name="bluetooth"
+                                         Grid.Row="4"/>
+                </Grid>
+            </ScrollView>
+
+            <controls:BusyIndicatorView Grid.Row="2"
+                                        FadeBackground="True"
+                                        IsActive="{Binding IsBusy}"/>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

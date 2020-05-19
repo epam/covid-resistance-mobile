@@ -1,0 +1,8 @@
+<Project>
+  <PropertyGroup>
+      <Authors>EPAM Systems</Authors>
+      <Owners>EPAM Systems</Owners>
+      <Copyright>EPAM Systems, Inc.</Copyright>
+      <LangVersion>latestmajor</LangVersion>
+  </PropertyGroup>
+</Project>

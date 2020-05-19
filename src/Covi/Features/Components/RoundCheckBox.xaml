@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView
+    x:Name="Root"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:Covi.Styles;assembly=Covi"
+    xmlns:forms="clr-namespace:FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms"
+    x:Class="Covi.Features.Components.RoundCheckBox">
+
+    <ContentView.Content>
+        <forms:SvgCachedImage
+                x:Name="RoundCheckBoxImage"
+                BindingContext="{x:Reference Root}"
+                Margin="0"
+                Source="passwordcircle_empty.svg"
+                WidthRequest="20"
+                HeightRequest="20"
+                VerticalOptions="Center"
+                HorizontalOptions="Center"/>
+
+    </ContentView.Content>
+</ContentView>

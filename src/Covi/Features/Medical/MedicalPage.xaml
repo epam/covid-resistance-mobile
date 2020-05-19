@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+                xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+                xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                xmlns:medicalChangeStatus="clr-namespace:Covi.Features.MedicalChangeStatus;assembly=Covi"
+                xmlns:logIn="clr-namespace:Covi.Features.MedicalLogin.Components.LogIn;assembly=Covi"
+                mc:Ignorable="d"
+                x:Name="root"
+                x:Class="Covi.Features.Medical.MedicalPage"
+                Style="{StaticResource RootStandalonePageStyle}">
+    <ContentPage.Content>
+        <Grid HorizontalOptions="FillAndExpand"
+                    VerticalOptions="FillAndExpand">
+             <ContentView IsVisible="{Binding ShowLogin, FallbackValue=false, TargetNullValue=false}">
+                <logIn:MedicalLogInView BindingContext="{Binding MedicalLoginViewModel}"/>
+            </ContentView>
+            <ContentView  IsVisible="{Binding ShowChangeStatus, FallbackValue=false, TargetNullValue=false}">
+                <medicalChangeStatus:MedicalChangeStatusView BindingContext="{Binding MedicalChangeStatusViewModel}"/>
+            </ContentView>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

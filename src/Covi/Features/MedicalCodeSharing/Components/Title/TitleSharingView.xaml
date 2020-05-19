@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:controls="clr-namespace:Covi.Features.Controls;assembly=Covi"
+             xmlns:resources="clr-namespace:Covi.Resources"
+             mc:Ignorable="d"
+             x:Class="Covi.Features.MedicalCodeSharing.Components.Title.TitleSharingView">
+
+    <ContentView.Content>
+        <controls:Card Style="{StaticResource CardStyle}"
+                     Padding="0,0,0,0">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+
+                <Label Grid.Row="0"
+                     Text="{Static resources:Localization.MedicalCodeSharing_Title_Text}"
+                     Style="{StaticResource TextTitle16}"
+                     Margin="24, 8, 24, 0"/>
+                <Label Grid.Row="1"
+                     Text="{Binding Status}"
+                     Style="{StaticResource TextTitle15}"
+                     Margin="24, 0, 24, 8"/>
+            </Grid>
+        </controls:Card>
+    </ContentView.Content>
+</ContentView>

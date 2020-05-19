@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:resources="clr-namespace:Covi.Resources;assembly=Covi"
+             xmlns:components="clr-namespace:Covi.Features.Components;assembly=Covi"
+             xmlns:effects="clr-namespace:Covi.Effects;assembly=Covi"
+             mc:Ignorable="d"
+             xmlns:vm="clr-namespace:Covi.Features.UserLogIn;assembly=Covi"
+             xmlns:controls="clr-namespace:Covi.Features.Controls;assembly=Covi"
+             x:Class="Covi.Features.UserLogIn.UserLogInPage"
+             Style="{StaticResource ContentPageStyle}">
+    <ContentPage.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <ContentView Grid.Row="0"
+                         x:Name="Header"
+                         Style="{StaticResource PageHeaderVariant2Style}"
+                         Padding="24,0,24,16">
+                <Label Text="{x:Static resources:Localization.UserLogIn_PageName_Text}"
+                       Style="{StaticResource TextPageTitleVariant2Style}"/>
+            </ContentView>
+
+            <ScrollView
+                Style="{StaticResource ContentContainerStyle}"
+                Grid.Row="1">
+                <Grid Style="{StaticResource NestedContentContainerStyle}">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+
+                    <components:CoviEntry HorizontalOptions="FillAndExpand"
+                                          Grid.Row="1"
+                                          Placeholder="{Static resources:Localization.UserLogIn_NameEntry_Placeholder_Text}"
+                                          ReturnType="Next"
+                                          Text="{Binding UserName, Mode=TwoWay}"
+                                          HasAnError="{Binding HasUsernameErrorMessage, Mode=TwoWay}"
+                                          ErrorText="{Binding UsernameErrorText, Mode=TwoWay}"/>
+                    <components:CoviEntry HorizontalOptions="FillAndExpand"
+                                          Grid.Row="2"
+                                          HidePassword="True"
+                                          ShowPasswordEye="True"
+                                          ReturnType="Send"
+                                          ReturnCommand="{Binding LogInCommand}"
+                                          Text="{Binding UserPassword, Mode=TwoWay}"
+                                          Placeholder="{Static resources:Localization.UserLogIn_PasswordEntry_Placeholder_Text}"
+                                          HasAnError="{Binding HasPasswordErrorMessage, Mode=TwoWay}"
+                                          ErrorText="{Binding PasswordErrorText, Mode=TwoWay}"
+                                          Margin="0, 32, 0, 0"/>
+
+                    <Button Text="{x:Static resources:Localization.UserLogIn_Btn_Text}"
+                            Margin="0, 32, 0, 0"
+                            Grid.Row="4"
+                            Style="{StaticResource ButtonStyle}"
+                            VerticalOptions="End"
+                            Command="{Binding LogInCommand}"/>
+
+                    <components:PoweredBy Grid.Row="5"
+                                          Margin="0,24,0,0"
+                                          HorizontalOptions="Center"/>
+                </Grid>
+            </ScrollView>
+
+            <controls:BusyIndicatorView Grid.Row="1"
+                                        FadeBackground="True"
+                                        IsActive="{Binding IsBusy}"/>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

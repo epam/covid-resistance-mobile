@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<?xaml-comp compile="true" ?>
+<ResourceDictionary xmlns="http://xamarin.com/schemas/2014/forms"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                    xmlns:converters="clr-namespace:Covi.Converters;assembly=Covi">
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="/Styles/Colors.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+    <!--<converters:TypeToIconConverter x:Key="TypeToIconConverter" />
+    <converters:DoubleToIntConverter x:Key="DoubleToIntConverter" />
+    <converters:PropertyInfoBooleanValueConverter x:Key="PropertyInfoBooleanValueConverter" />
+    <converters:NullOrEmptyToBoolConverter x:Key="NullOrEmptyToBoolConverter" />
+    <converters:ScrollValueConverter x:Key="ScrollValueConverter"/>
+    <converters:ComparisonConverter x:Key="ComparisonConverter"/>
+    <converters:ScrollPositionConverter x:Key="ScrollPositionConverter"/>
+    <converters:StringToColorResourceConverter x:Key="StringToColorResourceConverter"/>
+    <converters:ResourceToHexStringConverter x:Key="ResourceToHexStringConverter"/>
+    <converters:IndexToColorConverter x:Key="IndexToColorConverter"/>-->
+
+    <converters:InvertedBoolConverter x:Key="InvertedBoolConverter"/>
+    <converters:NotEmptyStringToBoolConverter x:Key="NotEmptyStringToBoolConverter"/>
+    <converters:HealthStatusColorConverter x:Key="HealthStatusColorConverter"
+                                           CriticalSeverityColor="{StaticResource InfectedStatusColor}"
+                                           LowSeverityColor="{StaticResource HealthyStatusColor}"
+                                           HighSeverityColor="{StaticResource AtRiskStatusColor}"
+                                           NotRecognizedSeverityColor="{StaticResource NotRecognizedStatusColor}"/>
+</ResourceDictionary>

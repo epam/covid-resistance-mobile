@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:components="clr-namespace:Covi.Features.MedicalChangeStatus.Components;assembly=Covi"
+             x:Class="Covi.Features.MedicalChangeStatus.Components.RadioButtonListView"
+             x:Name="MainControl">
+    <ContentView.Content>
+        <StackLayout
+            BindableLayout.ItemsSource="{Binding Source={x:Reference MainControl}, Path=OptionsList}">
+            <BindableLayout.ItemTemplate>
+                <DataTemplate>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="58"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+                         <Label
+                             Grid.Row="0"
+                             Grid.Column="0"
+                             Margin="30,0,0,0"
+                             Style="{StaticResource TextTitle16}"
+                             Text="{Binding OptionText}"
+                             VerticalOptions="Center"
+                             HorizontalOptions="StartAndExpand"/>
+                         <components:RadioButtonView
+                             Grid.Row="0"
+                             Grid.Column="1"
+                             Margin="0,0,30,0"
+                             IsSelected="{Binding IsSelected, FallbackValue=False, TargetNullValue=False}"/>
+                        <BoxView
+                             Grid.Row="1"
+                             Grid.ColumnSpan="2"
+                             Style="{StaticResource SeparatorStyle}"
+                             VerticalOptions="End"/>
+                    </Grid>
+                </DataTemplate>
+            </BindableLayout.ItemTemplate>
+        </StackLayout>
+    </ContentView.Content>
+</ContentView>

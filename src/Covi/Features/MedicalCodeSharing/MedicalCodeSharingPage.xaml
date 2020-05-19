@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:resources="clr-namespace:Covi.Resources"
+             xmlns:title="clr-namespace:Covi.Features.MedicalCodeSharing.Components.Title;assembly=Covi"
+             xmlns:sharedCode="clr-namespace:Covi.Features.MedicalCodeSharing.Components.SharedCode;assembly=Covi"
+             xmlns:shareButton="clr-namespace:Covi.Features.MedicalCodeSharing.Components.ShareButton;assembly=Covi"
+             x:Class="Covi.Features.MedicalCodeSharing.MedicalCodeSharingPage"
+             Style="{StaticResource ContentPageStyle}">
+
+    <ContentPage.Content>
+
+        <Grid
+            HorizontalOptions="FillAndExpand"
+            RowSpacing="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <ContentView Grid.Row="0"
+                         x:Name="Header"
+                         Style="{StaticResource PageHeaderVariant2Style}"
+                         Padding="24,0,24,16">
+                <Label Text="{x:Static resources:Localization.MedicalCodeSharing_PageName_Text}"
+                       Style="{StaticResource TextPageTitleVariant2Style}"/>
+            </ContentView>
+
+            <ScrollView Grid.Row="1"
+                        Style="{StaticResource ContentContainerVariant2Style}"
+                        HorizontalOptions="FillAndExpand"
+                        VerticalOptions="FillAndExpand">
+
+                <Grid HorizontalOptions="FillAndExpand">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+
+                    <title:TitleSharingView x:Name="titleGeneratorView"
+                                              Grid.Row="0"/>
+                    <sharedCode:SharedCodeView x:Name="shareCodeView"
+                                       Grid.Row="1"
+                                       Margin="0,48,0,0"/>
+
+                    <shareButton:ShareButtonView x:Name="shareButtonView"
+                                                 Grid.Row="2"
+                                                 VerticalOptions="End"/>
+                </Grid>
+            </ScrollView>
+
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             xmlns:resources="clr-namespace:Covi.Resources"
+             xmlns:components="clr-namespace:Covi.Features.Components;assembly=Covi"
+             xmlns:medical="clr-namespace:Covi.Features.Medical;assembly=Covi"
+             xmlns:controls="clr-namespace:Covi.Features.Controls;assembly=Covi"
+             x:Class="Covi.Features.MedicalLogin.Components.LogIn.MedicalLogInView">
+
+    <ContentView.Content>
+        <Grid RowSpacing="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <ContentView Grid.Row="0"
+                   Style="{StaticResource PageHeaderStyle}">
+                <Label Text="{x:Static resources:Localization.MedicalLogIn_PageName_Text}"
+                       Style="{StaticResource TextPageTitleStyle}"/>
+            </ContentView>
+            <BoxView Grid.Row="1"
+                     Style="{StaticResource SeparatorStyle}"/>
+
+            <Grid Grid.Row="2" Style="{StaticResource ContentContainerVariant2Style}">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+
+                <controls:Card Grid.Row="0"
+                           Style="{StaticResource CardStyle}">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+                        <Label Grid.Row="0"
+                       Text="{Static resources:Localization.MedicalLogIn_Title_Text}"
+                       Style="{StaticResource TextTitle16}"
+                       Margin="16, 16, 16, 0"/>
+
+                        <components:CoviEntry Grid.Row="1"
+                                  VerticalOptions="Center"
+                                  HorizontalOptions="FillAndExpand"
+                                  Placeholder="{Static resources:Localization.MedicalLogIn_Entry_Placeholder_Text}"
+                                  HasAnError="{Binding HasMedicalIdErrorMessage}"
+                                  ErrorText="{Binding MedicalIdErrorText}"
+                                  Text="{Binding MedicalId, Mode=TwoWay}"
+                                  Margin="24, 0, 24, 0"/>
+                    </Grid>
+                </controls:Card>
+
+                <controls:Card Grid.Row="1"
+                               Margin="0,8,0,8"
+                               Style="{StaticResource CardStyle}"
+                               VerticalOptions="End">
+                    <Button 
+                    Text="{x:Static resources:Localization.MedicalLogIn_Btn_Text}"
+                    Style="{StaticResource ButtonStyle}"
+                    Margin="24,24,24,24"
+                    Command="{Binding MedicalEnterIdCommand}"/>
+                </controls:Card>
+            </Grid>
+
+            <controls:BusyIndicatorView Grid.Row="2"
+                                        FadeBackground="True"
+                                        IsActive="{Binding IsBusy}"/>
+        </Grid>
+    </ContentView.Content>
+</ContentView>
