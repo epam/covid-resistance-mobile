@@ -11,6 +11,7 @@ Mandatory fields to set:
 Put here the url of your server instance.
 
 ##### 2. Push notifications
+To configure push notifications, please follow official [Azure Notifications Hub guidelines]( https://docs.microsoft.com/en-us/azure/notification-hubs/ ).
 Configure azure notifications hub (it is the way back-end notifies the user about their infected status cahge) according to their guidelines and provide the following keys:
 ```
 "PushNotifications_NotificationHubName": "{hub_name}",
